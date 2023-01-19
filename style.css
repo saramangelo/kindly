@@ -1,9 +1,15 @@
 header {
     width: 100%;
+    color: white;
+    text-align: center;
     background-color:black;
+    
 }
 
-h1 {
-    text-align: center;
+body {
+    background-color: black;
+}
+
+h2 {
     color: white;
 }
