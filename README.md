@@ -30,6 +30,7 @@ Kindly is a full-stack application where volunteer users can create an account, 
 Salma Loum
 Owen Garrett
 Edmond Buck
+Sara Angelo
   
   
 ## License
