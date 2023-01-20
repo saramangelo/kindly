@@ -22,7 +22,7 @@ Opportunity.init(
     },
     // date of opportunity
     date_of_opp: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
@@ -42,7 +42,7 @@ Opportunity.init(
     },
     // This will save an image to database
     photo: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
       allowNull: false,
     },
   // user_id referencing ID of User who created this opportunity
