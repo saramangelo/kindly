@@ -45,7 +45,7 @@ Opportunity.init(
       type: DataTypes.BLOB,
       allowNull: false,
     },
-  
+  // user_id referencing ID of User who created this opportunity
     user_id: {
       type: DataTypes.INTEGER,
       references: {
