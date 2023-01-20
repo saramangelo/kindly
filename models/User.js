@@ -16,10 +16,12 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    // Name of user
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // User's email address
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -28,6 +30,7 @@ User.init(
         isEmail: true,
       },
     },
+    // User's password
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -37,6 +40,7 @@ User.init(
     },
   },
   {
+    // hashing password before create and before update to ensure security/privacy
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
