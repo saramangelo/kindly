@@ -11,22 +11,27 @@ Opportunity.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    // name of opportunity
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // description of opportunity
     description: {
       type: DataTypes.STRING,
     },
-    date_created: {
+    // date of opportunity
+    date_of_opp: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    // location of opportunity
     location: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+
     user_id: {
       type: DataTypes.INTEGER,
       references: {
