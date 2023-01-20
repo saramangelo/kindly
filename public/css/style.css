@@ -1,9 +1,53 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+/* Universal Selector */
+* {
+  margin: 0;
+  padding: 0;
 }
 
+:root {
+  /* declare a variable with `--` syntax */
+  --dark: #00000;
+  --teal: #00c2cb;
+  --light: #fff;
+  --radius: 50px;
+  --center: center;
+}
+
+/* Element Selectors */
+header {
+  border-bottom: 1px solid;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(3, 152, 158, 1) 72%,
+    rgba(92, 225, 230, 1) 100%
+  );
+}
+
+a {
+  color: var(--light);
+  font-family: 'Kaushan Script', cursive;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-left: -5px;
+}
+
+a:hover {
+  color: var(--teal);
+  text-decoration: underline;
+}
+
+/*
+.project:not(:last-child)
 .no-button {
-  background: none;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(3, 152, 158, 1) 72%,
+    rgba(92, 225, 230, 1) 100%
+  );
   border: none;
   padding: 0;
   cursor: pointer;
@@ -12,13 +56,11 @@ header, .project:not(:last-child) {
   font-size: 100%;
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
-}
+
 
 .dollar-amount {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
 }
+*/
