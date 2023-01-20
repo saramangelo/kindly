@@ -31,7 +31,7 @@ Opportunity.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-
+    // items to bring to opportunity
     items: {
       type: DataTypes.STRING,
       allowNull: false,
