@@ -27,16 +27,17 @@ Kindly is a full-stack application where volunteer users can create an account, 
    
   
 ## Credits
-Salma Loum
-Owen Garrett
-Edmond Buck
+<!-- include everyone's github username -->
+Salma Loum, 
+Owen Garrett, 
+Edmond Buck, 
 Sara Angelo
   
   
 ## License
 MIT License
 
-Copyright (c) 2023 Sara Angelo
+Copyright (c) 2023 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -71,6 +72,7 @@ SOFTWARE.
   
 
 ## Questions
+<!-- need to include everyone's information -->
 Reach me at the links below with additional questions:
 - Github: https://github.com/saramangelo
 - Email: saramangelo@gmail.com
