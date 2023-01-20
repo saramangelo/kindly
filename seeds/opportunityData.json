@@ -1,10 +1,12 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
+    "name": "Malibu 5K",
+    "description": "Malibu 5K Fun Run",
     "date_of_opp": 01/20/23,
-    "location": "Los Angeles, CA",
+    "location": "Malibu, CA",
+    "items": ,
     "volunteers_needed": 20,
+    "photo": 
   },
 
 ]
