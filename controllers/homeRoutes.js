@@ -4,6 +4,40 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
+    res.render('homepage');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/profile', async (req, res) => {
+  try {
+    res.render('profile');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/opportunity', (req, res) => {
+  try {
+    res.render('opportunity');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/login', (req, res) => {
+  try {
+    res.render('login');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
+
+/*
+
     // Get all projects and JOIN with user data
     const opportunityData = await Opportunity.findAll({
       include: [
@@ -48,11 +82,11 @@ router.get('/opportunities/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+*/
 
 // Use withAuth middleware to prevent access to route
-router.get('/opportunity', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
+
+/*  // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Opportunity }],
@@ -64,19 +98,6 @@ router.get('/opportunity', withAuth, async (req, res) => {
       ...user,
       logged_in: true,
     });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  
 });
-
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/profile');
-    return;
-  }
-
-  res.render('login');
-});
-
-module.exports = router;
+*/

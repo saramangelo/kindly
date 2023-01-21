@@ -1,20 +1,53 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+/* Universal Selector */
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /* declare a variable with `--` syntax */
+  --dark: #00000;
+  --teal: #00c2cb;
+  --light: #fff;
+  --radius: 50px;
+  --center: center;
 }
 
-.no-button {
-  background: none;
+/* Element Selectors */
+
+a {
+  color: black;
+  font-family: 'Kaushan Script', cursive;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin: 20px;
+}
+
+a:hover {
+  color: var(--teal);
+  text-shadow: 1px 2px 2px white;
+}
+
+body {
+  position: relative;
+  font-family: 'Goudy Bookletter 1911', sans-serif;
+  font-size: 20px;
+  background: rgb(7, 84, 98);
+  background: linear-gradient(
+    0deg,
+    rgba(7, 84, 98, 1) 0%,
+    rgba(0, 194, 203, 1) 56%,
+    rgba(202, 253, 255, 1) 100%
+  );
+}
+
+.project:not(:last-child) .no-button {
   border: none;
   padding: 0;
   cursor: pointer;
   color: #1b89bc;
   text-decoration: none;
   font-size: 100%;
-}
-
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
 }
 
 .dollar-amount {
