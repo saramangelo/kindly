@@ -15,13 +15,14 @@ const seedDatabase = async () => {
   });
 
   for (const opportunity of opportunityData) {
+  // let dateobj = new Date(date_of_opp)
     await Opportunity.create({
       ...opportunity,
-      date_of_opp: date_of_opp.toISOString(),
+      // date_of_opp: dateobj.toISOString(),
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
-console.log(date_of_opp)
+// console.log(date_of_opp)
   process.exit(0);
 };
 
