@@ -8,7 +8,7 @@ const newFormHandler = async (event) => {
   const location = document.querySelector('#location').value.trim();
   const items = document.querySelector('#items').value.trim();
   const volunteers = document.querySelector('#volunteers_needed').value.trim();
-  const imageUrl = document.querySelector('#photo').value.trim();
+  // const imageUrl = document.querySelector('#photo').value.trim();
 
   if (
     name &&
@@ -17,8 +17,7 @@ const newFormHandler = async (event) => {
     date &&
     location &&
     items &&
-    volunteers &&
-    imageUrl
+    volunteers
   ) {
     const response = await fetch(`/api/opportunities`, {
       method: 'POST',
@@ -29,8 +28,8 @@ const newFormHandler = async (event) => {
         date,
         location,
         items,
-        volunteers,
-        imageUrl,
+        volunteers
+        // imageUrl,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -45,26 +44,26 @@ const newFormHandler = async (event) => {
   }
 };
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+// const delButtonHandler = async (event) => {
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/opportunities/${id}`, {
-      method: 'DELETE',
-    });
+//     const response = await fetch(`/api/opportunities/${id}`, {
+//       method: 'DELETE',
+//     });
 
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to delete project');
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace('/profile');
+//     } else {
+//       alert('Failed to delete project');
+//     }
+//   }
+// };
 
 document
   .querySelector('.new-opportunity-form')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.opportunity-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.opportunity-list')
+//   .addEventListener('click', delButtonHandler);
