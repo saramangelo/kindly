@@ -11,8 +11,13 @@ Opportunity.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // name of opportunity
-    name: {
+       // opportunity name
+       name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    // name of org sponsoring opp
+    organization_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -36,6 +41,7 @@ Opportunity.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // total volunteers needed - to be logically compared to who has already signed up (bonus)
     volunteers_needed: {
       type: DataTypes.INTEGER,
       allowNull: false,
