@@ -4,6 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
+    // get all opportunities and join with user data
     const opportunityData = await Opportunity.findAll({
       include: [
         {
@@ -13,9 +14,11 @@ router.get('/', async (req, res) => {
       ],
     });
 
+    // serialize the data so the template can read it
     const opportunities = opportunityData.map((opportunity) =>
       opportunity.get({ plain: true })
     );
+    // pass serialized data and session flag into template
     res.render('homepage', {
       opportunities,
       logged_in: req.session.logged_in,
@@ -47,6 +50,7 @@ router.get('/opportunity/:id', async (req, res) => {
   }
 });
 
+// corresponds with FE profile.js
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {

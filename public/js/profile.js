@@ -1,3 +1,6 @@
+// FRONT END - Creating opportunity on front end here, sending to the back end
+// This corresponds with opportunityRoutes.js on BE
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -37,6 +40,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      // /profile corresponds to homeRoutes.js on BE
       document.location.replace('/profile');
     } else {
       console.log(response)
