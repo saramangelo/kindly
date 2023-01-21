@@ -11,7 +11,7 @@ const newFormHandler = async (event) => {
   const imageUrl = document.querySelector('#photo').value.trim();
 
   if (name && sponsor && description && date && location && items && volunteers && imageUrl) {
-    const response = await fetch(`/api/opportunity`, {
+    const response = await fetch(`/api/opportunities`, {
       method: 'POST',
       body: JSON.stringify({ name, sponsor, description, date, location, items, volunteers, imageUrl}),
       headers: {
@@ -31,7 +31,7 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/opportunity/${id}`, {
+    const response = await fetch(`/api/opportunities/${id}`, {
       method: 'DELETE',
     });
 
@@ -43,10 +43,6 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.form-group')
-  .addEventListener('submit', newFormHandler);
+document.querySelector('.new-opportunity-form').addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.opportunity-list')
-  .addEventListener('click', delButtonHandler);
+document.querySelector('.opportunity-list').addEventListener('click', delButtonHandler);
