@@ -10,10 +10,28 @@ const newFormHandler = async (event) => {
   const volunteers = document.querySelector('#volunteers_needed').value.trim();
   const imageUrl = document.querySelector('#photo').value.trim();
 
-  if (name && sponsor && description && date && location && items && volunteers && imageUrl) {
+  if (
+    name &&
+    sponsor &&
+    description &&
+    date &&
+    location &&
+    items &&
+    volunteers &&
+    imageUrl
+  ) {
     const response = await fetch(`/api/opportunities`, {
       method: 'POST',
-      body: JSON.stringify({ name, sponsor, description, date, location, items, volunteers, imageUrl}),
+      body: JSON.stringify({
+        name,
+        sponsor,
+        description,
+        date,
+        location,
+        items,
+        volunteers,
+        imageUrl,
+      }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -43,6 +61,10 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document.querySelector('.new-opportunity-form').addEventListener('submit', newFormHandler);
+document
+  .querySelector('.new-opportunity-form')
+  .addEventListener('submit', newFormHandler);
 
-document.querySelector('.opportunity-list').addEventListener('click', delButtonHandler);
+document
+  .querySelector('.opportunity-list')
+  .addEventListener('click', delButtonHandler);
