@@ -11,8 +11,13 @@ Opportunity.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // name of opportunity
+    // opportunity name
     name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    // name of org sponsoring opp
+    organization_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -22,7 +27,7 @@ Opportunity.init(
     },
     // date of opportunity
     date_of_opp: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
@@ -31,21 +36,22 @@ Opportunity.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-
+    // items to bring to opportunity
     items: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // total volunteers needed - to be logically compared to who has already signed up (bonus)
     volunteers_needed: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
     // This will save an image to database
     photo: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
       allowNull: false,
     },
-  
+    // user_id referencing ID of User who created this opportunity
     user_id: {
       type: DataTypes.INTEGER,
       references: {

@@ -1,56 +1,173 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+<div class='row'>
+  <div class='col-auto'>
+    <h2>
+      Welcome, {{name}}!
+    </h2>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create A New Volunteer Opportunity!</h3>
+<div class='row mt-4'>
+  <div class='col-md-6'>
+    <h3>
+      Create A New Volunteer Opportunity!
+    </h3>
 
-    <form class="form new-opportunity-form">
-      <div class="form-group">
-        <label for="opportunity-name">Opportunity Name:</label>
-        <input class="form-input" type="text" id="opportunity-name" name="opportunity-name" />
-      </div>
-      {{!-- <div class="form-group">
-        <label for="opportunity-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="opportunity-funding" name="opportunity-funding" />
-      </div> --}}
-      <div class="form-group">
-        <label for="opportunity-desc">description:</label>
-        <textarea class="form-input" id="opportunity-desc" name="opportunity-desc"></textarea>
-      </div>
-
-
-<div class="form-group">
-        <label for="opportunity-desc">description:</label>
-        <textarea class="form-input" id="opportunity-desc" name="opportunity-desc"></textarea>
+    <form class='form new-opportunity-form'>
+      <div class='form-group'>
+        <label for='name'>
+          Event's Name:
+        </label>
+        <input
+          class='form-input'
+          type='text'
+          id='name'
+          name='name'
+        />
       </div>
 
 
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+   <form class='form new-opportunity-form'>
+      <div class='form-group'>
+        <label for='organization_name'>
+          Who is sponsoring this opportunity:
+        </label>
+        <input
+          class='form-input'
+          type='text'
+          id='organization_name'
+          name='organization_name'
+        />
+      </div>
+
+
+ <form class='form new-opportunity-form'>
+      <div class='form-group'>
+        <label for='description'>
+          Please provide details about this opportunity:
+        </label>
+        <input
+          class='form-input'
+          type='text'
+          id='description'
+          name='description'
+        />
+      </div>
+
+
+ <form class='form new-opportunity-form'>
+      <div class='form-group'>
+        <label for='date_of_opp'>
+          When is it happening?
+        </label>
+        <input
+          class='form-input'
+          type='text'
+          id='date_of_opp'
+          name='date_of_opp'
+        />
+      </div>
+
+ <form class='form new-opportunity-form'>
+      <div class='form-group'>
+        <label for='location'>
+          And where?
+        </label>
+        <input
+          class='form-input'
+          type='text'
+          id='location'
+          name='location'
+        />
+      </div>
+
+ <form class='form new-opportunity-form'>
+      <div class='form-group'>
+        <label for='items'>
+          Is there anything volunteers should bring with?
+        </label>
+        <input
+          class='form-input'
+          type='text'
+          id='items'
+          name='items'
+        />
+      </div>
+
+ <form class='form new-opportunity-form'>
+      <div class='form-group'>
+        <label for='volunteers_needed'>
+          Volunteers needed:
+        </label>
+        <input
+          class='form-input'
+          type='text'
+          id='volunteers_needed'
+          name='volunteers_needed'
+        />
+      </div>
+
+
+
+ <form class='form new-opportunity-form'>
+      <div class='form-group'>
+        <label for='photo'>
+         Attach pportunity's flyer here:
+        </label>
+        <input
+          class='form-input'
+          type='text'
+          id='photo'
+          name='photo'
+        />
+      </div>
+
+ <form class='form new-opportunity-form'>
+      <div class='form-group'>
+        <label for='photo'>
+         Attach pportunity's flyer here:
+        </label>
+        <input
+          class='form-input'
+          type='text'
+          id='photo'
+          name='photo'
+        />
+      </div>
+
+
+
+      <div class='form-group'>
+        <button type='submit' class='btn btn-primary'>
+          Create
+        </button>
       </div>
     </form>
   </div>
 
   {{#if opportunities.length}}
-  <div class="col-md-6 opportunity-list">
-    <h3>Current Opportunities:</h3>
+    <div class='col-md-6 opportunity-list'>
+      <h3>
+        Current Opportunities:
+      </h3>
 
-    {{#each opportunities as |opportunity|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/opportunity/{{opportunity.id}}">{{opportunity.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{opportunity.id}}">DELETE</button>
-      </div>
+      {{#each opportunities as |opportunity|}}
+        <div class='row mb-2'>
+          <div class='col-md-8'>
+            <h4>
+              <a href="/opportunity/{{opportunity.id}}">
+                {{opportunity.name}}
+              </a>
+            </h4>
+          </div>
+          <div class='col-md-4'>
+            <button class='btn btn-sm btn-danger' data-id="{{opportunity.id}}">
+              DELETE
+            </button>
+          </div>
+        </div>
+      {{/each}}
     </div>
-    {{/each}}
-  </div>
   {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+<script src='./js/profile.js'></script>

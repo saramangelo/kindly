@@ -10,7 +10,15 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/opportunity', async (req, res) => {
+router.get('/profile', async (req, res) => {
+  try {
+    res.render('profile');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/opportunity', (req, res) => {
   try {
     res.render('opportunity');
   } catch (err) {
