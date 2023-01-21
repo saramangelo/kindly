@@ -4,7 +4,20 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage');
+    const opportunityData = await Opportunity.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        }
+      ]
+    });
+
+    const opportunities = opportunityData.map((opportunity) => PromiseRejectionEvent.get({ plain: true }));
+    res.render('homepage', {
+      opportunities,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err);
   }

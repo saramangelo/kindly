@@ -11,18 +11,11 @@ Opportunity.init(
       primaryKey: true,
       autoIncrement: true,
     },
-
        // opportunity name
        name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-    // name of org sponsoring opp
-    organization_name: {
-
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     // name of org sponsoring opp
     organization_name: {
       type: DataTypes.STRING,
