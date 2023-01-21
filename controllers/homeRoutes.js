@@ -60,6 +60,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    // renders profile.handlebars
     res.render('profile', {
       ...user,
       logged_in: true
