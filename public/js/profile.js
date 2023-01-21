@@ -1,13 +1,13 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#name').value.trim();
-  const sponsor = document.querySelector('#organization_name').value.trim();
-  const description = document.querySelector('#description').value.trim();
-  const date = document.querySelector('#date_of_opp').value.trim();
-  const location = document.querySelector('#location').value.trim();
-  const items = document.querySelector('#items').value.trim();
-  const volunteers = document.querySelector('#volunteers_needed').value.trim();
+  const name = document.querySelector('#opportunity-name').value.trim();
+  const sponsor = document.querySelector('#organization-name').value.trim();
+  const description = document.querySelector('#opportunity-description').value.trim();
+  const date = document.querySelector('#date-of-opp').value.trim();
+  const location = document.querySelector('#opportunity-location').value.trim();
+  const items = document.querySelector('#items-to-bring').value.trim();
+  const volunteers = document.querySelector('#volunteers-needed').value.trim();
   // const imageUrl = document.querySelector('#photo').value.trim();
 
   if (
@@ -19,7 +19,7 @@ const newFormHandler = async (event) => {
     items &&
     volunteers
   ) {
-    const response = await fetch(`/api/opportunities`, {
+    const response = await fetch(`/api/opportunity`, {
       method: 'POST',
       body: JSON.stringify({
         name,
@@ -39,6 +39,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
+      console.log(response)
       alert('Failed to create project');
     }
   }
