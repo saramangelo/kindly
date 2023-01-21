@@ -10,9 +10,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-module.exports = router;
-
-/*router.get('/opportunity', withAuth, async (req, res) => {
+router.get('/opportunity', async (req, res) => {
   try {
     res.render('opportunity');
   } catch (err) {
@@ -29,7 +27,9 @@ router.get('/login', (req, res) => {
 });
 
 module.exports = router;
+
 /*
+
     // Get all projects and JOIN with user data
     const opportunityData = await Opportunity.findAll({
       include: [

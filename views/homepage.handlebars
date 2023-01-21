@@ -5,7 +5,7 @@
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       {{{get_emoji}}}
-      <a href="/opportunity/{{opportunity.id}}">{{opportunity.name}}</a>
+      <a href="/opportunity{{opportunity.id}}">{{opportunity.name}}</a>
     </h2>
     <p>
       {{!-- <span for="img" aria-label="money">💲</span> --}}
@@ -13,6 +13,7 @@
       {{!-- <span class="dollar-amount">{{format_amount project.needed_funding}}</span> --}}
       {{!-- needed! --}}
     </p>
+
     <p>Created by {{opportunity.user.name}} on {{format_date opportunity.date_created}}</p>
   </div>
   <div class="col-md-7">
