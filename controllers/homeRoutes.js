@@ -9,14 +9,38 @@ router.get('/', async (req, res) => {
         {
           model: User,
           attributes: ['name'],
-        }
-      ]
+        },
+      ],
     });
 
-    const opportunities = opportunityData.map((opportunity) => PromiseRejectionEvent.get({ plain: true }));
+    const opportunities = opportunityData.map((opportunity) =>
+      opportunity.get({ plain: true })
+    );
     res.render('homepage', {
       opportunities,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/opportunity/:id', async (req, res) => {
+  try {
+    const opportunityData = await Opportunity.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const opportunity = opportunityData.get({ plain: true });
+
+    res.render('opportunity', {
+      ...opportunity,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
