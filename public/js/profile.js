@@ -1,13 +1,19 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
+  const name = document.querySelector('#name').value.trim();
+  const sponsor = document.querySelector('#organization_name').value.trim();
+  const description = document.querySelector('#description').value.trim();
+  const date = document.querySelector('#date_of_opp').value.trim();
+  const location = document.querySelector('#location').value.trim();
+  const items = document.querySelector('#items').value.trim();
+  const volunteers = document.querySelector('#volunteers_needed').value.trim();
+  const imageUrl = document.querySelector('#photo').value.trim();
 
-  if (name && description) {
+  if (name && sponsor && description && date && location && items && volunteers && imageUrl) {
     const response = await fetch(`/api/opportunity`, {
       method: 'POST',
-      body: JSON.stringify({ name, description }),
+      body: JSON.stringify({ name, sponsor, description, date, location, items, volunteers, imageUrl}),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -38,9 +44,9 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-project-form')
+  .querySelector('.form-group')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.project-list')
+  .querySelector('.opportunity-list')
   .addEventListener('click', delButtonHandler);

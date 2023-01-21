@@ -1,7 +1,7 @@
 <div class='row'>
   <div class='col-auto'>
     <h2>
-      Welcome, {{name}}!
+      Welcome, {{opportunity.user.name}}!
     </h2>
   </div>
 </div>
@@ -15,7 +15,7 @@
     <form class='form new-opportunity-form'>
       <div class='form-group'>
         <label for='name'>
-          Event's Name:
+          Event Name:
         </label>
         <input
           class='form-input'
@@ -30,7 +30,7 @@
    <form class='form new-opportunity-form'>
       <div class='form-group'>
         <label for='organization_name'>
-          Who is sponsoring this opportunity:
+          Who is sponsoring this opportunity?
         </label>
         <input
           class='form-input'
@@ -80,16 +80,16 @@
           name='location'
         />
 
-      <div class="form-group">
-        <label for="opportunity-desc">description:</label>
+      {{!-- <div class="form-group">
+        <label for="opportunity-desc">Description:</label>
         <textarea class="form-input" id="opportunity-desc" name="opportunity-desc"></textarea>
 
-      </div>
+      </div> --}}
 
  <form class='form new-opportunity-form'>
       <div class='form-group'>
         <label for='items'>
-          Is there anything volunteers should bring with?
+          Is there anything volunteers should bring to the event?
         </label>
         <input
           class='form-input'
@@ -116,7 +116,7 @@
  <form class='form new-opportunity-form'>
       <div class='form-group'>
         <label for='photo'>
-         Attach opportunity's flyer here:
+         Attach the opportunity image here:
         </label>
         <input
           class='form-input'

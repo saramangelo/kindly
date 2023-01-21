@@ -18,5 +18,15 @@
     "items": "Non-perishable foods, cans, paper bags, cardboard boxes",
     "volunteers_needed": 10,
     "photo": "https://bountifulfoodpantry.org/media/k2/items/cache/4695cb3b19cbf906e45dac0da0913068_XL.jpg"
+  },
+  {
+    "name": "Toys for Tots",
+    "organization_name": "US Marine Corps Reserve",
+    "description": "Toy collection for less fortunate youth",
+    "date_of_opp": "2023-06-20T21:22:35.836Z",
+    "location": "Monterey, CA",
+    "items": "Cardboard boxes, markers, toys, reusable bags",
+    "volunteers_needed": 8,
+    "photo": "https://fairfieldcounty.momcollective.com/wp-content/uploads/2016/02/toy-donations.png"
   }
 ]
