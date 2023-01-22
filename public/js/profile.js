@@ -11,28 +11,6 @@ const newFormHandler = async (event) => {
   const location = document.querySelector('#opportunity-location').value.trim();
   const items = document.querySelector('#items-to-bring').value.trim();
   const volunteers = document.querySelector('#volunteers-needed').value.trim();
-  const cloudinaryBtn = document.querySelector('#upload_widget');
-
-
-// cloudinary widget
-
-let myWidget = cloudinary.createUploadWidget(
-  {
-    cloudName: "",
-    uploadPreset: ""
-  },
-  (error, result) => {
-    if (!error && result && result.event === "success"){
-      console.log("Done! Here is the image info: ", result.info);
-    }
-  }
-);
-
-cloudinaryBtn.addEventListener('click', function(){
-  myWidget.open();
-},
-false
-);
 
 
 
@@ -86,6 +64,28 @@ false
 //     }
 //   }
 // };
+
+
+// cloudinary widget
+
+let myWidget = cloudinary.createUploadWidget(
+  {
+    cloudName: "",
+    uploadPreset: ""
+  },
+  (error, result) => {
+    if (!error && result && result.event === "success"){
+      console.log("Done! Here is the image info: ", result.info);
+    }
+  }
+);
+
+document.getElementById('#upload_widget').addEventListener('click', function(){
+  myWidget.open();
+},
+false
+);
+
 
 document
   .querySelector('.new-opportunity-form')
