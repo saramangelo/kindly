@@ -15,71 +15,86 @@
 
     <form class='form new-opportunity-form'>
       <div class='form-group'>
-        <label for='name'>
+        <label for='opportunity-name'>
           Event Name:
         </label>
-        <input class='form-input' type='text' id='opportunity-name' name='name' />
+        <input
+          class='form-input'
+          type='text'
+          id='opportunity-name'
+          name='opportunity-name'
+        />
       </div>
 
       <div class='form-group'>
-        <label for='organization_name'>
+        <label for='organization-name'>
           Who is sponsoring this opportunity?
         </label>
         <input
           class='form-input'
           type='text'
           id='organization-name'
-          name='organization_name'
+          name='organization-name'
         />
       </div>
 
       <div class='form-group'>
-        <label for='description'>
+        <label for='opportunity-description'>
           Please provide details about this opportunity:
         </label>
-        <input
+        <textarea
           class='form-input'
           type='text'
           id='opportunity-description'
-          name='description'
-        />
+          name='opportunity-description'
+        ></textarea>
       </div>
 
       <div class='form-group'>
-        <label for='date_of_opp'>
+        <label for='date-of-opp'>
           When is it happening?
         </label>
         <input
           class='form-input'
           type='text'
           id='date-of-opp'
-          name='date_of_opp'
+          name='date-of-opp'
         />
       </div>
 
       <div class='form-group'>
-        <label for='location'>
+        <label for='opportunity-location'>
           And where?
         </label>
-        <input class='form-input' type='text' id='opportunity-location' name='location' />
+        <input
+          class='form-input'
+          type='text'
+          id='opportunity-location'
+          name='opportunity-location'
+        />
       </div>
 
       <div class='form-group'>
-        <label for='items'>
+        <label for='items-to-bring'>
           Is there anything volunteers should bring to the event?
         </label>
-        <input class='form-input' type='text' id='items-to-bring' name='items' />
+        <input
+          class='form-input'
+          type='text'
+          id='items-to-bring'
+          name='items-to-bring'
+        />
       </div>
 
       <div class='form-group'>
-        <label for='volunteers_needed'>
+        <label for='volunteers-needed'>
           Volunteers needed:
         </label>
         <input
           class='form-input'
           type='number'
           id='volunteers-needed'
-          name='volunteers_needed'
+          name='volunteers-needed'
         />
       </div>
 
@@ -89,27 +104,26 @@
         </button>
       </div>
     </form>
-
-    {{#if opportunities.length}}
-      <div class='col-md-6 opportunity-list'>
-        <h3>
-          Current Opportunities:
-        </h3>
-
-        {{#each opportunities as |opportunity|}}
-          <div class='row mb-2'>
-            <div class='col-md-8'>
-              <h4>
-                <a href='/opportunity/{{opportunity.id}}'>
-                  {{opportunity.name}}
-                </a>
-              </h4>
-            </div>
-          </div>
-        {{/each}}
-      </div>
-    {{/if}}
   </div>
+  {{#if opportunities.length}}
+    <div class='col-md-6 opportunity-list'>
+      <h3>
+        Current Opportunities:
+      </h3>
+
+      {{#each opportunities as |opportunity|}}
+        <div class='row mb-2'>
+          <div class='col-md-8'>
+            <h4>
+              <a href='/opportunity/{{opportunity.id}}'>
+                {{opportunity.name}}
+              </a>
+            </h4>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
 </div>
 
 <script src='./js/profile.js'></script>

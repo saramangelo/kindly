@@ -22,7 +22,7 @@ const newFormHandler = async (event) => {
     items &&
     volunteers
   ) {
-    const response = await fetch(`/api/opportunity`, {
+    const response = await fetch(`/api/opportunities`, {
       method: 'POST',
       body: JSON.stringify({
         name,
