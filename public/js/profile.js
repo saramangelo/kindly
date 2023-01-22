@@ -20,7 +20,7 @@ const newFormHandler = async (event) => {
     const offset = new Date().getTimezoneOffset();
     const myDate = Date.parse(date) - offset + 60 + 1000;
     const dateAsISO = new Date(myDate).toISOString();
-
+console.log(dateAsISO)
     return dateAsISO;
   }
 
