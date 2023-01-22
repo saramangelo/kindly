@@ -44,7 +44,7 @@ const newFormHandler = async (event) => {
       document.location.replace('/profile');
     } else {
       console.log(response)
-      alert('Failed to create project');
+      alert('Failed to create opportunity');
     }
   }
 };
