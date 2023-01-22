@@ -1,3 +1,4 @@
+// const cldInstance = new Cloudinary({cloud: {cloudName: 'di3e0booq'}});
 // FRONT END - Creating opportunity on front end here, sending to the back end
 // This corresponds with opportunityRoutes.js on BE
 
@@ -68,23 +69,25 @@ const newFormHandler = async (event) => {
 
 // cloudinary widget
 
-let myWidget = cloudinary.createUploadWidget(
-  {
-    cloudName: "",
-    uploadPreset: ""
-  },
-  (error, result) => {
-    if (!error && result && result.event === "success"){
-      console.log("Done! Here is the image info: ", result.info);
-    }
-  }
-);
+// let myWidget = cloudinary.createUploadWidget(
+//   {
+//     cloudName: "di3e0booq",
+//     uploadPreset: "btw7ntpw"
+//   },
+//   (error, result) => {
+//     if (!error && result && result.event === "success"){
+//       console.log("Done! Here is the image info: ", result.info);
+//     }
+//   }
+// );
 
-document.getElementById('#upload_widget').addEventListener('click', function(){
-  myWidget.open();
-},
-false
-);
+// document.getElementById('#upload_widget').addEventListener('click', function(){
+//   myWidget.open();
+// },
+// false
+// );
+
+
 
 
 document
