@@ -14,6 +14,16 @@ router.get('/', async (req, res) => {
       ],
     });
 
+    // router.get('/opportunity', async (req, res) => {
+    //   try {
+    //     await Opportunity.findAll()
+    
+    //     res.render('profile', {opportunities});
+    //   } catch (err) {
+    //     res.status(500).json(err);
+    //   }
+    // }); 
+
     // serialize the data so the template can read it
     const opportunities = opportunityData.map((opportunity) =>
       opportunity.get({ plain: true })
@@ -27,6 +37,8 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 
 router.get('/opportunity/:id', async (req, res) => {
   try {
@@ -70,15 +82,10 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-router.get('/opportunity', (req, res) => {
-  try {
-    res.render('profile', {opportunities});
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+
 
 router.get('/login', (req, res) => {
+  // if the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
