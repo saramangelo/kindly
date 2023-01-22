@@ -33,7 +33,9 @@ router.get('/', async (req, res) => {
       opportunities,
       logged_in: req.session.logged_in,
     });
+    console.log(req.body)
   } catch (err) {
+    console.log(response)
     res.status(500).json(err);
   }
 });
