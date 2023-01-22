@@ -11,7 +11,30 @@ const newFormHandler = async (event) => {
   const location = document.querySelector('#opportunity-location').value.trim();
   const items = document.querySelector('#items-to-bring').value.trim();
   const volunteers = document.querySelector('#volunteers-needed').value.trim();
-  // const imageUrl = document.querySelector('#photo').value.trim();
+  const cloudinaryBtn = document.querySelector('#upload_widget');
+
+
+// cloudinary widget
+
+let myWidget = cloudinary.createUploadWidget(
+  {
+    cloudName: "",
+    uploadPreset: ""
+  },
+  (error, result) => {
+    if (!error && result && result.event === "success"){
+      console.log("Done! Here is the image info: ", result.info);
+    }
+  }
+);
+
+cloudinaryBtn.addEventListener('click', function(){
+  myWidget.open();
+},
+false
+);
+
+
 
   if (
     name &&
@@ -32,7 +55,6 @@ const newFormHandler = async (event) => {
         location,
         items,
         volunteers
-        // imageUrl,
       }),
       headers: {
         'Content-Type': 'application/json',
