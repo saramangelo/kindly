@@ -6,12 +6,25 @@ const newFormHandler = async (event) => {
 
   const name = document.querySelector('#opportunity-name').value.trim();
   const sponsor = document.querySelector('#organization-name').value.trim();
-  const description = document.querySelector('#opportunity-description').value.trim();
+  const description = document
+    .querySelector('#opportunity-description')
+    .value.trim();
   const date = document.querySelector('#date-of-opp').value.trim();
   const location = document.querySelector('#opportunity-location').value.trim();
   const items = document.querySelector('#items-to-bring').value.trim();
   const volunteers = document.querySelector('#volunteers-needed').value.trim();
-  // const imageUrl = document.querySelector('#photo').value.trim();
+
+
+// ISO to String Method for date
+  function createUTCdateForISO(date){
+    const offset = new Date().getTimezoneOffset();
+    const myDate = Date.parse(date) - offset + 60 + 1000;
+    const dateAsISO = new Date(myDate).toISOString();
+
+    return dateAsISO;
+  }
+
+
 
   if (
     name &&
@@ -31,8 +44,7 @@ const newFormHandler = async (event) => {
         date,
         location,
         items,
-        volunteers
-        // imageUrl,
+        volunteers,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -43,7 +55,7 @@ const newFormHandler = async (event) => {
       // /profile corresponds to homeRoutes.js on BE
       document.location.replace('/profile');
     } else {
-      console.log(response)
+      console.log(response);
       alert('Failed to create opportunity');
     }
   }
