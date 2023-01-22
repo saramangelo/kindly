@@ -12,6 +12,37 @@
     <h3>
       Create A New Volunteer Opportunity!
     </h3>
+<br />
+
+      {{! cloudinary widget }}
+      <div class='form-group'>
+        <div>
+          <label for='upload_widget'>
+            Upload Event Images below:
+          </label>
+          <br />
+          <br />
+          <button id='upload_widget' class='cloudinary-button'>Upload Event
+            Images</button></div>
+      </div>
+
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+
+<script type="text/javascript">  
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'di3e0booq', 
+  uploadPreset: 'kindly'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the image info: ', result.info); 
+    }
+  }
+)
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+</script>
+
 
     <form class='form new-opportunity-form'>
       <div class='form-group'>
@@ -98,33 +129,6 @@
         />
       </div>
       
-      {{! cloudinary widget }}
-      <div class='form-group'>
-        <div>
-          <label for='upload_widget'>
-            Upload Event Images below:
-          </label>
-          <br />
-          <button id='upload_widget' class='cloudinary-button'>Upload Event
-            Images</button></div>
-      </div>
-
-    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
-
-<script type="text/javascript">  
-var myWidget = cloudinary.createUploadWidget({
-  cloudName: 'di3e0booq', 
-  uploadPreset: 'kindly'}, (error, result) => { 
-    if (!error && result && result.event === "success") { 
-      console.log('Done! Here is the image info: ', result.info); 
-    }
-  }
-)
-
-document.getElementById("upload_widget").addEventListener("click", function(){
-    myWidget.open();
-  }, false);
-</script>
 
 
 
