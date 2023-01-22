@@ -21,11 +21,17 @@
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
+        {{!-- if logged in, show a logout button --}}
         {{#if logged_in}}
         <a id="header-links"  href="/profile">profile</a> |
         <a id="header-links"  id="logout">logout</a>
         {{else}}
+
+        {{!-- if not logged in, just show login link --}}
+        <a href="/login">login</a>
+
         <a id="header-links" href="/login">login</a>
+
         {{/if}}
       </nav>
     </header>

@@ -7,109 +7,123 @@
   </div>
 </div>
 
-<div class='row mt-4'>
-  <div class='col-md-6'>
+<div class="row mt-4">
+  <div class="col-md-6">
     <h3>
       Create A New Volunteer Opportunity!
     </h3>
 
-    <form class='form new-opportunity-form'>
-      <div class='form-group'>
-        <label for='name'>
+    <form class="form new-opportunity-form">
+      <div class="form-group">
+        <label for="opportunity-name">
           Event Name:
         </label>
-        <input class='form-input' type='text' id='name' name='name' />
+        <input
+          class="form-input"
+          type="text"
+          id="opportunity-name"
+          name="opportunity-name"
+        />
       </div>
 
-      <div class='form-group'>
-        <label for='organization_name'>
+      <div class="form-group">
+        <label for="organization-name">
           Who is sponsoring this opportunity?
         </label>
         <input
-          class='form-input'
-          type='text'
-          id='organization_name'
-          name='organization_name'
+          class="form-input"
+          type="text"
+          id="organization-name"
+          name="organization-name"
         />
       </div>
 
-      <div class='form-group'>
-        <label for='description'>
+      <div class="form-group">
+        <label for="opportunity-description">
           Please provide details about this opportunity:
         </label>
-        <input
-          class='form-input'
-          type='text'
-          id='description'
-          name='description'
-        />
+        <textarea
+          class="form-input"
+          type="text"
+          id="opportunity-description"
+          name="opportunity-description"
+        ></textarea>
       </div>
 
-      <div class='form-group'>
-        <label for='date_of_opp'>
+      <div class="form-group">
+        <label for="date-of-opp">
           When is it happening?
         </label>
         <input
-          class='form-input'
-          type='text'
-          id='date_of_opp'
-          name='date_of_opp'
+          class="form-input"
+          type="text"
+          id="date-of-opp"
+          name="date-of-opp"
         />
       </div>
 
-      <div class='form-group'>
-        <label for='location'>
+      <div class="form-group">
+        <label for="opportunity-location">
           And where?
         </label>
-        <input class='form-input' type='text' id='location' name='location' />
+        <input
+          class="form-input"
+          type="text"
+          id="opportunity-location"
+          name="opportunity-location"
+        />
       </div>
 
-      <div class='form-group'>
-        <label for='items'>
+      <div class="form-group">
+        <label for="items-to-bring">
           Is there anything volunteers should bring to the event?
         </label>
-        <input class='form-input' type='text' id='items' name='items' />
+        <input
+          class="form-input"
+          type="text"
+          id="items-to-bring"
+          name="items-to-bring"
+        />
       </div>
 
-      <div class='form-group'>
-        <label for='volunteers_needed'>
+      <div class="form-group">
+        <label for="volunteers-needed">
           Volunteers needed:
         </label>
         <input
-          class='form-input'
-          type='number'
-          id='volunteers_needed'
-          name='volunteers_needed'
+          class="form-input"
+          type="number"
+          id="volunteers-needed"
+          name="volunteers-needed"
         />
       </div>
 
-      <div class='form-group'>
-        <button type='submit' class='btn btn-primary'>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">
           Create
         </button>
       </div>
     </form>
-
-    {{#if opportunities.length}}
-      <div class='col-md-6 opportunity-list'>
-        <h3>
-          Current Opportunities:
-        </h3>
-
-        {{#each opportunities as |opportunity|}}
-          <div class='row mb-2'>
-            <div class='col-md-8'>
-              <h4>
-                <a href='/opportunity/{{opportunity.id}}'>
-                  {{opportunity.name}}
-                </a>
-              </h4>
-            </div>
-          </div>
-        {{/each}}
-      </div>
-    {{/if}}
   </div>
+  {{#if opportunities.length}}
+    <div class="col-md-6 opportunity-list">
+      <h3>
+        Current Opportunities:
+      </h3>
+
+      {{#each opportunities as |opportunity|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4>
+              <a href="/opportunity/{{opportunity.id}}">
+                {{opportunity.name}}
+              </a>
+            </h4>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
 </div>
 
-<script src='./js/profile.js'></script>
+<script src="./js/profile.js"></script>

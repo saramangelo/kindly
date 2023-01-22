@@ -1,7 +1,10 @@
+// This corresponds with profile.js on FE
+
 const router = require('express').Router();
 const { Opportunity } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// create opportunity
 router.post('/', withAuth, async (req, res) => {
   try {
     const newOpportunity = await Opportunity.create({
@@ -14,6 +17,8 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+
 
 // router.delete('/:id', withAuth, async (req, res) => {
 //   try {

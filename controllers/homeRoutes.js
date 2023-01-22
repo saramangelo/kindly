@@ -4,6 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
+    // get all opportunities and join with user data
     const opportunityData = await Opportunity.findAll({
       include: [
         {
@@ -13,17 +14,33 @@ router.get('/', async (req, res) => {
       ],
     });
 
+    // router.get('/opportunity', async (req, res) => {
+    //   try {
+    //     await Opportunity.findAll()
+    
+    //     res.render('profile', {opportunities});
+    //   } catch (err) {
+    //     res.status(500).json(err);
+    //   }
+    // }); 
+
+    // serialize the data so the template can read it
     const opportunities = opportunityData.map((opportunity) =>
       opportunity.get({ plain: true })
     );
+    // pass serialized data and session flag into template
     res.render('homepage', {
       opportunities,
       logged_in: req.session.logged_in,
     });
+    console.log(req.body)
   } catch (err) {
+    console.log(response)
     res.status(500).json(err);
   }
 });
+
+
 
 router.get('/opportunity/:id', async (req, res) => {
   try {
@@ -47,6 +64,7 @@ router.get('/opportunity/:id', async (req, res) => {
   }
 });
 
+// corresponds with FE profile.js
 router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -56,6 +74,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    // renders profile.handlebars
     res.render('profile', {
       ...user,
       logged_in: true
@@ -65,15 +84,10 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-// router.get('/opportunity', (req, res) => {
-//   try {
-//     res.render('opportunity');
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+
 
 router.get('/login', (req, res) => {
+  // if the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
