@@ -6,13 +6,13 @@ const newFormHandler = async (event) => {
 
   const name = document.querySelector('#opportunity-name').value.trim();
   const sponsor = document.querySelector('#organization-name').value.trim();
-  const description = document.querySelector('#opportunity-description').value.trim();
+  const description = document
+    .querySelector('#opportunity-description')
+    .value.trim();
   const date = document.querySelector('#date-of-opp').value.trim();
   const location = document.querySelector('#opportunity-location').value.trim();
   const items = document.querySelector('#items-to-bring').value.trim();
   const volunteers = document.querySelector('#volunteers-needed').value.trim();
-
-
 
   if (
     name &&
@@ -32,7 +32,7 @@ const newFormHandler = async (event) => {
         date,
         location,
         items,
-        volunteers
+        volunteers,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const newFormHandler = async (event) => {
       // /profile corresponds to homeRoutes.js on BE
       document.location.replace('/profile');
     } else {
-      console.log(response)
+      console.log(response);
       alert('Failed to create opportunity');
     }
   }
@@ -64,8 +64,6 @@ const newFormHandler = async (event) => {
 //     }
 //   }
 // };
-
-
 
 document
   .querySelector('.new-opportunity-form')
