@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@cloudinary/url-gen": "^1.8.7",
     "bcrypt": "^5.0.0",
     "cld": "^2.8.4",
     "cloudinary": "^1.33.0",

@@ -70,13 +70,13 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-// router.get('/opportunity', (req, res) => {
-//   try {
-//     res.render('opportunity');
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.get('/opportunity', (req, res) => {
+  try {
+    res.render('profile', {opportunities});
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
