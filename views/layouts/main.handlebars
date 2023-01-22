@@ -14,18 +14,18 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+    <header class="display-flex justify-space-between align-center p-2" ">
       <h1>
 
-        <a href="/">Kindly</a>
+        <a id="header-links" href="/">Kindly</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a id="header-links"  href="/profile">profile</a> |
+        <a id="header-links"  id="logout">logout</a>
         {{else}}
-        <a href="/login">login</a>
+        <a id="header-links" href="/login">login</a>
         {{/if}}
       </nav>
     </header>
