@@ -14,20 +14,6 @@
 
 /* Element Selectors */
 
-a {
-  color: black;
-  font-family: 'Kaushan Script', cursive;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  margin: 20px;
-}
-
-a:hover {
-  color: var(--teal);
-  text-shadow: 1px 2px 2px white;
-}
-
 body {
   position: relative;
   font-family: 'Goudy Bookletter 1911', sans-serif;
@@ -41,17 +27,60 @@ body {
   );
 }
 
-.project:not(:last-child) .no-button {
+header {
+  background-color: black;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+a {
+  color: black;
+  font-family: 'Kaushan Script', cursive;
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
+  margin: 20px;
 }
 
+a:hover,
+#logout:hover {
+  color: var(--light);
+  text-shadow: 1px 1px 1px var(--teal);
+}
+
+/* ID Selectors */
+#header-links,
+#logout {
+  font-family: 'Kaushan Script', cursive;
+  color: white;
+  background-color: black;
+}
+
+#header-links:hover {
+  color: var(--teal);
+  text-shadow: 1px 1px 1px var(--light);
+}
+
+/* Class Selectors */
+.btn.btn-primary {
+  color: var(--light);
+  background-color: black;
+}
+
+/*
 .dollar-amount {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
 }
+*/
