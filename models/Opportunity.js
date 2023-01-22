@@ -26,6 +26,7 @@ Opportunity.init(
       type: DataTypes.STRING,
     },
     // date of opportunity
+    //Need to use ISO date method to convert date entered by user
     date_of_opp: {
       type: DataTypes.STRING,
       allowNull: false,
