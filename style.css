@@ -2,15 +2,35 @@ header {
     width: 100%;
     color: white;
     text-align: center;
-    background-color:black;
+    background-color: teal;
     
 }
 
 body {
     color: white;
-    background-color: black;
+    background-color: teal;
 }
 
 h2 {
     color: white;
 }
+
+/* unvisited link */
+a:link {
+    color: red;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: white;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: yellow;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }
