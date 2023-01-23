@@ -9,9 +9,9 @@
 
 <div class='row mt-4'>
   <div class='col-md-6'>
-    <h3>
+    <h4>
       Create A New Volunteer Opportunity!
-    </h3>
+    </h4>
     <br />
 
     {{! cloudinary widget }}
@@ -23,7 +23,10 @@
         </label>
         <br />
         <br />
-        <button id='upload_widget' class='cloudinary-button'>Upload Event Images</button></div>
+        <button id='upload_widget' class='cloudinary-button'>
+          Upload Event Images
+        </button>
+      </div>
     </div>
 
     <form class='form new-opportunity-form'>
@@ -118,24 +121,28 @@
       </div>
     </form>
   </div>
+
   {{#if opportunities.length}}
     <div class='col-md-6 opportunity-list'>
-      <h3>
+      <h4>
         Current Opportunities:
-      </h3>
+      </h4>
 
       {{#each opportunities as |opportunity|}}
         <div class='row mb-2'>
           <div class='col-md-8'>
-            <h4>
-              <a href='/opportunity/{{opportunity.id}}'>
+            <h2>
+              <a href="/opportunity/{{opportunity.id}}">
                 {{opportunity.name}}
               </a>
-            </h4>
+            </h2>
           </div>
-           <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{opportunity.id}}">DELETE</button>
-      </div>
+
+          <div class='col-md-4'>
+            <button class='btn btn-sm btn-dark' data-id="{{opportunity.id}}">
+              DELETE
+            </button>
+          </div>
         </div>
       {{/each}}
     </div>
