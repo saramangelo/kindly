@@ -30,7 +30,7 @@ Opportunity.init(
     date_of_opp: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      // defaultValue: DataTypes.NOW,
     },
     // location of opportunity
     location: {
@@ -50,7 +50,6 @@ Opportunity.init(
     // This will save an image to database
     photo: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
 
   // user_id referencing ID of User who created this opportunity

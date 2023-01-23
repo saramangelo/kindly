@@ -14,18 +14,6 @@ const newFormHandler = async (event) => {
   const items = document.querySelector('#items-to-bring').value.trim();
   const volunteers = document.querySelector('#volunteers-needed').value.trim();
 
-
-// ISO to String Method for date
-  function createUTCdateForISO(date){
-    const offset = new Date().getTimezoneOffset();
-    const myDate = Date.parse(date) - offset + 60 + 1000;
-    const dateAsISO = new Date(myDate).toISOString();
-console.log(dateAsISO)
-    return dateAsISO;
-  }
-
-
-
   if (
     name &&
     sponsor &&
@@ -35,17 +23,22 @@ console.log(dateAsISO)
     items &&
     volunteers
   ) {
-    const response = await fetch(`/api/opportunities`, {
+    console.log(photo)
+    let input = JSON.stringify({
+      name,
+      organization_name: sponsor,
+      description,
+      date_of_opp: date,
+      location,
+      items,
+      volunteers_needed: volunteers,
+      photo: photo.url,
+    });
+
+    // console.log(input)
+    const response = await fetch(`/api/opportunities/`, {
       method: 'POST',
-      body: JSON.stringify({
-        name,
-        sponsor,
-        description,
-        date,
-        location,
-        items,
-        volunteers,
-      }),
+      body: input,
       headers: {
         'Content-Type': 'application/json',
       },
@@ -55,11 +48,11 @@ console.log(dateAsISO)
       // /profile corresponds to homeRoutes.js on BE
       document.location.replace('/profile');
     } else {
-      console.log(response);
       alert('Failed to create opportunity');
     }
   }
 };
+
 
 // const delButtonHandler = async (event) => {
 //   if (event.target.hasAttribute('data-id')) {
