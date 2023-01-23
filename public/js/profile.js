@@ -14,6 +14,7 @@ const newFormHandler = async (event) => {
   const items = document.querySelector('#items-to-bring').value.trim();
   const volunteers = document.querySelector('#volunteers-needed').value.trim();
 
+
   if (
     name &&
     sponsor &&
@@ -21,17 +22,14 @@ const newFormHandler = async (event) => {
     date &&
     location &&
     items &&
-    volunteers
+    volunteers &&
+    photo.url
   ) {
 
     // MODAL
     // console.log(photo)
-    // if (!photo) {
-    //   $(document).ready(function(){
-    //     $("#myBtn").click(function(){
+    // if (!photo.url) {
     //       $("#myModal").modal();
-    //     });
-    //   });
     // }
 
     let input = JSON.stringify({
