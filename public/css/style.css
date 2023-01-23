@@ -130,6 +130,12 @@ hr {
   background-color: black;
 }
 
+.opportunity {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 /* .dollar-amount {
   color: #056605;
   font-weight: bold;
