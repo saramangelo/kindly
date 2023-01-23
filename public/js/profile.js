@@ -25,8 +25,13 @@ const newFormHandler = async (event) => {
   ) {
     console.log(photo)
     if (!photo) {
-      alert('Please upload a photo prior to submitting!')
+      $(document).ready(function(){
+        $("#myBtn").click(function(){
+          $("#myModal").modal();
+        });
+      });
     }
+
     let input = JSON.stringify({
       name,
       organization_name: sponsor,
