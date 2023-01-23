@@ -23,14 +23,16 @@ const newFormHandler = async (event) => {
     items &&
     volunteers
   ) {
-    console.log(photo)
-    if (!photo) {
-      $(document).ready(function(){
-        $("#myBtn").click(function(){
-          $("#myModal").modal();
-        });
-      });
-    }
+
+    // MODAL
+    // console.log(photo)
+    // if (!photo) {
+    //   $(document).ready(function(){
+    //     $("#myBtn").click(function(){
+    //       $("#myModal").modal();
+    //     });
+    //   });
+    // }
 
     let input = JSON.stringify({
       name,
