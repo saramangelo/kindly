@@ -30,7 +30,7 @@ Opportunity.init(
     date_of_opp: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+      // defaultValue: DataTypes.NOW,
     },
     // location of opportunity
     location: {
