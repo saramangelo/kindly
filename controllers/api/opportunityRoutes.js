@@ -8,12 +8,12 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
   try {
     console.log(req.body)
-    // const newOpportunity = await Opportunity.create({
-    //   ...req.body,
-    //   user_id: req.session.user_id,
-    // });
+    const newOpportunity = await Opportunity.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
 
-    // res.status(200).json(newOpportunity);
+    res.status(200).json(newOpportunity);
   } catch (err) {
     res.status(400).json(err);
   }

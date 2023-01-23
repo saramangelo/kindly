@@ -14,17 +14,14 @@ const newFormHandler = async (event) => {
   const items = document.querySelector('#items-to-bring').value.trim();
   const volunteers = document.querySelector('#volunteers-needed').value.trim();
 
-
-// ISO to String Method for date
-  function createUTCdateForISO(date){
+  // ISO to String Method for date
+  function createUTCdateForISO(date) {
     const offset = new Date().getTimezoneOffset();
     const myDate = Date.parse(date) - offset + 60 + 1000;
     const dateAsISO = new Date(myDate).toISOString();
-console.log(dateAsISO)
+    console.log(dateAsISO);
     return dateAsISO;
   }
-
-
 
   if (
     name &&
@@ -37,13 +34,13 @@ console.log(dateAsISO)
   ) {
     let input = JSON.stringify({
       name,
-            organization_name: name,
-            description,
-            date_of_opp: date,
-            location,
-            items,
-            volunteers_needed: volunteers,
-    })
+      organization_name: sponsor,
+      description,
+      date_of_opp: date,
+      location,
+      items,
+      volunteers_needed: volunteers,
+    });
 
     // console.log(input)
     const response = await fetch(`/api/opportunities/`, {
@@ -54,16 +51,15 @@ console.log(dateAsISO)
       },
     });
 
-  //   if (response.ok) {
-  //     // /profile corresponds to homeRoutes.js on BE
-  //     document.location.replace('/profile');
-  //   } else {
-  //     console.log(response);
-  //     alert('Failed to create opportunity');
-  //   }
-  // }
+    if (response.ok) {
+      // /profile corresponds to homeRoutes.js on BE
+      document.location.replace('/profile');
+    } else {
+      console.log(response);
+      alert('Failed to create opportunity');
+    }
+  }
 };
-}
 
 // const delButtonHandler = async (event) => {
 //   if (event.target.hasAttribute('data-id')) {
