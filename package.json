@@ -1,4 +1,9 @@
 {
+  "dependencies": {
+    "bootstrap": "^5.3.0-alpha1"
+  }
+}
+{
   "name": "volunteering",
   "version": "1.0.0",
   "description": "",
