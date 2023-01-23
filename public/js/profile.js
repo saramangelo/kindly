@@ -35,31 +35,43 @@ console.log(dateAsISO)
     items &&
     volunteers
   ) {
-    const response = await fetch(`/api/opportunities/`, {
-      method: 'POST',
-      body: JSON.stringify({
-        name,
-        sponsor,
-        description,
-        date,
-        location,
-        items,
-        volunteers,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    let input = JSON.stringify({
+      name,
+            sponsor,
+            description,
+            date,
+            location,
+            items,
+            volunteers
+    })
 
-    if (response.ok) {
-      // /profile corresponds to homeRoutes.js on BE
-      document.location.replace('/profile');
-    } else {
-      console.log(response);
-      alert('Failed to create opportunity');
-    }
-  }
+    console.log(input)
+  //   const response = await fetch(`/api/opportunities/`, {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       name,
+  //       sponsor,
+  //       description,
+  //       date,
+  //       location,
+  //       items,
+  //       volunteers,
+  //     }),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   });
+
+  //   if (response.ok) {
+  //     // /profile corresponds to homeRoutes.js on BE
+  //     document.location.replace('/profile');
+  //   } else {
+  //     console.log(response);
+  //     alert('Failed to create opportunity');
+  //   }
+  // }
 };
+}
 
 // const delButtonHandler = async (event) => {
 //   if (event.target.hasAttribute('data-id')) {
