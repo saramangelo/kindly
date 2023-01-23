@@ -7,9 +7,10 @@
   <title>Kindly</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Kaushan+Script&family=Norican&family=Pattaya&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Kaushan+Script&family=Norican&family=Pattaya&family=Raleway:ital,wght@0,100;0,300;0,400;0,500;1,100;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +19,10 @@
       <h1>
 
         <a id="header-links" href="/">Kindly</a>
+       <span><h3><i> Make a real impact in your community!</i></h3></span>
       </h1>
+      
+
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
@@ -28,15 +32,20 @@
         <a id="header-links" href="/login">login</a>
         {{/if}}
       </nav>
+     
     </header>
 
-
-    <main  class="container container-fluid mt-5">
+    <main class= "container container-fluid mt-5 fw-ligh ">
+    
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
+
+ <hr> 
     <footer>
-      
+      Made with love &#128151;
+      <br>
+          © 2023 Edmond Buck, Owen Garret, Sara Angelo and Salma Loum
     </footer>
   </div>
 

@@ -5,7 +5,7 @@
 }
 :root {
   /* declare a variable with `--` syntax */
-  --dark: #00000;
+  --dark: #075462;
   --teal: #00c2cb;
   --light: #fff;
   --radius: 50px;
@@ -40,7 +40,20 @@ h2 {
 }
 
 h3 {
-  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  text-shadow: 1px 2px 2px #1c6ea4;
+  font-size: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 15px;
 }
 
 a {
@@ -57,7 +70,17 @@ a:hover,
   color: var(--light);
   text-shadow: 1px 1px 1px var(--teal);
 }
+footer {
+  margin: 20px;
+  font-size: 15px;
+  text-align: center;
+}
 
+hr {
+  height: 2px;
+  border-width: 0;
+  background-color: black;
+}
 /* ID Selectors */
 #header-links,
 #logout {
@@ -69,12 +92,20 @@ a:hover,
 #header-links:hover {
   color: var(--teal);
   text-shadow: 1px 1px 1px var(--light);
+  text-decoration: none;
 }
 
 /* Class Selectors */
 .btn.btn-primary {
   color: var(--light);
   background-color: black;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
 }
 
 /*

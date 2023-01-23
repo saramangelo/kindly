@@ -1,23 +1,39 @@
 <!-- Loop over each object in the projects array -->
-{{#each opportunities as |opportunity| }}
-<div class="row mb-4 opportunity">
-  <div class="col-md-5">
-    <h2>
-      <a href="/opportunity/{{opportunity.id}}">{{opportunity.name}}</a>
-    </h2>
-    <p>
-       <span class="volunteers-needed">{{volunteers_needed}}</span>
-       volunteers needed!
-    </p>
+{{#each opportunities as |opportunity|}}
+  <div class='row mb-4 opportunity'>
+    <div class='col-md-5'>
+      <tr class='table'>
+        <h2>
+          <a href="/opportunity/{{opportunity.id}}">
+            {{opportunity.name}}
+          </a>
+        </h2>
 
-    <p>Created by {{opportunity.user.name}}</p>
+        <h4>
+          {{opportunity.description}}
+        </h4>
+        <h6>
+          <span class='volunteers-needed'>
+            {{volunteers_needed}}
+          </span>
+          volunteers needed!
+        </h6>
 
-  <p>
+        <p>
+          Created by {{opportunity.user.name}}
+        </p>
+      </tr>
+    </div>
+
+    <div class='col-md-7'>
+      <figure class='figure'>
+        <img
+          class='figure-img img-fluid rounded center'
+          src="{{opportunity.photo}}"
+          alt="{{opportunity.photo.alt}}"
+          width='200px'
+        />
+      </figure>
+    </div>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{opportunity.description}}
-    </p>
-  </div>
-</div>
 {{/each}}
