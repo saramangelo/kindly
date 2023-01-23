@@ -7,17 +7,23 @@ const withAuth = require('../../utils/auth');
 // create opportunity
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newOpportunity = await Opportunity.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
+    console.log(req.body)
+    // const newOpportunity = await Opportunity.create({
+    //   ...req.body,
+    //   user_id: req.session.user_id,
+    // });
 
-    res.status(200).json(newOpportunity);
+    // res.status(200).json(newOpportunity);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
+
+// check that GET request is working, it is
+// router.get('/', (req, res) => {
+//   res.json("hello");
+// })
 
 
 // router.delete('/:id', withAuth, async (req, res) => {

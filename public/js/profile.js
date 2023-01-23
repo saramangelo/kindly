@@ -37,30 +37,22 @@ console.log(dateAsISO)
   ) {
     let input = JSON.stringify({
       name,
-            sponsor,
+            organization_name: name,
             description,
-            date,
+            date_of_opp: date,
             location,
             items,
-            volunteers
+            volunteers_needed: volunteers,
     })
 
-    console.log(input)
-  //   const response = await fetch(`/api/opportunities/`, {
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       name,
-  //       sponsor,
-  //       description,
-  //       date,
-  //       location,
-  //       items,
-  //       volunteers,
-  //     }),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   });
+    // console.log(input)
+    const response = await fetch(`/api/opportunities/`, {
+      method: 'POST',
+      body: input,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
   //   if (response.ok) {
   //     // /profile corresponds to homeRoutes.js on BE
