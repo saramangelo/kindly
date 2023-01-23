@@ -25,7 +25,7 @@ const newFormHandler = async (event) => {
   ) {
     console.log(photo)
     if (!photo) {
-      alert('Please upload a photo!')
+      alert('Please upload a photo prior to submitting!')
     }
     let input = JSON.stringify({
       name,
