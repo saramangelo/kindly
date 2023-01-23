@@ -40,6 +40,7 @@ const newFormHandler = async (event) => {
       location,
       items,
       volunteers_needed: volunteers,
+      photo: photo.url,
     });
 
     // console.log(input)
