@@ -35,7 +35,7 @@ console.log(dateAsISO)
     items &&
     volunteers
   ) {
-    const response = await fetch(`/api/opportunities`, {
+    const response = await fetch(`/api/opportunities/`, {
       method: 'POST',
       body: JSON.stringify({
         name,
