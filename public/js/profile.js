@@ -14,15 +14,6 @@ const newFormHandler = async (event) => {
   const items = document.querySelector('#items-to-bring').value.trim();
   const volunteers = document.querySelector('#volunteers-needed').value.trim();
 
-  // ISO to String Method for date
-  function createUTCdateForISO(date) {
-    const offset = new Date().getTimezoneOffset();
-    const myDate = Date.parse(date) - offset + 60 + 1000;
-    const dateAsISO = new Date(myDate).toISOString();
-    console.log(dateAsISO);
-    return dateAsISO;
-  }
-
   if (
     name &&
     sponsor &&
