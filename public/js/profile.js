@@ -48,7 +48,6 @@ const newFormHandler = async (event) => {
       // /profile corresponds to homeRoutes.js on BE
       document.location.replace('/profile');
     } else {
-      console.log(response);
       alert('Failed to create opportunity');
     }
   }
