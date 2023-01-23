@@ -1,13 +1,25 @@
-
-<div class="text-center">
-  <h1>{{name}}</h1>
-  <img src="{{photo}}" alt="sponsor image"/>
-  <h3>Hosted by {{organization_name}} on {{date_of_opp}} in {{location}}</h3>
-  <p>{{description}}</p>
-  <p>Volunteers can bring the following items: {{items}}</p>
+<div class='text-center'>
+  <h1>
+    {{name}}
+  </h1>
+  <img src="{{photo}}" alt='sponsor image' />
+  <h3>
+    Hosted by {{organization_name}} |  on {{date_of_opp}} |  in {{location}}
+  </h3>
   <p>
-  <span class="volunteers-needed">{{volunteers_needed}}</span>
-  volunteers needed
+    {{description}}
+  </p>
+  <p>
+    <b>
+      Volunteers can bring the following items:
+    </b>
+    {{items}}
+  </p>
+  <p>
+    <span class='volunteers-needed'>
+      {{volunteers_needed}}
+    </span>
+    volunteers needed
   </p>
   <p>
     <button class='btn btn-primary'>
