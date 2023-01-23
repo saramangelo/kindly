@@ -14,16 +14,6 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    // router.get('/opportunity', async (req, res) => {
-    //   try {
-    //     await Opportunity.findAll()
-    
-    //     res.render('profile', {opportunities});
-    //   } catch (err) {
-    //     res.status(500).json(err);
-    //   }
-    // }); 
-
     // serialize the data so the template can read it
     const opportunities = opportunityData.map((opportunity) =>
       opportunity.get({ plain: true })
