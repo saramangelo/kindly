@@ -1,4 +1,9 @@
-// This corresponds with profile.js on FE
+//this code sets up routing for an Express.js application. 
+
+//It imports two route modules, one for handling users and one for handling opportunities, and assigns them to routes '/users' and '/opportunities' respectively. 
+
+//It then exports the router as a module.
+
 
 const router = require('express').Router();
 const { Opportunity } = require('../../models');
