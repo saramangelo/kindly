@@ -32,6 +32,7 @@ const newFormHandler = async (event) => {
     items &&
     volunteers
   ) {
+    console.log(photo)
     let input = JSON.stringify({
       name,
       organization_name: sponsor,
