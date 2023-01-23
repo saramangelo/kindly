@@ -1,9 +1,13 @@
+// This corresponds with profile.js on FE
+
 const router = require('express').Router();
 const { Opportunity } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// create opportunity
 router.post('/', withAuth, async (req, res) => {
   try {
+    console.log(req.body)
     const newOpportunity = await Opportunity.create({
       ...req.body,
       user_id: req.session.user_id,
@@ -14,6 +18,13 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+
+// check that GET request is working, it is
+// router.get('/', (req, res) => {
+//   res.json("hello");
+// })
+
 
 // router.delete('/:id', withAuth, async (req, res) => {
 //   try {

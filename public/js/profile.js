@@ -1,14 +1,18 @@
+// FRONT END - Creating opportunity on front end here, sending to the back end
+// This corresponds with opportunityRoutes.js on BE
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#name').value.trim();
-  const sponsor = document.querySelector('#organization_name').value.trim();
-  const description = document.querySelector('#description').value.trim();
-  const date = document.querySelector('#date_of_opp').value.trim();
-  const location = document.querySelector('#location').value.trim();
-  const items = document.querySelector('#items').value.trim();
-  const volunteers = document.querySelector('#volunteers_needed').value.trim();
-  // const imageUrl = document.querySelector('#photo').value.trim();
+  const name = document.querySelector('#opportunity-name').value.trim();
+  const sponsor = document.querySelector('#organization-name').value.trim();
+  const description = document
+    .querySelector('#opportunity-description')
+    .value.trim();
+  const date = document.querySelector('#date-of-opp').value.trim();
+  const location = document.querySelector('#opportunity-location').value.trim();
+  const items = document.querySelector('#items-to-bring').value.trim();
+  const volunteers = document.querySelector('#volunteers-needed').value.trim();
 
   if (
     name &&
@@ -19,30 +23,36 @@ const newFormHandler = async (event) => {
     items &&
     volunteers
   ) {
-    const response = await fetch(`/api/opportunities`, {
+    console.log(photo)
+    let input = JSON.stringify({
+      name,
+      organization_name: sponsor,
+      description,
+      date_of_opp: date,
+      location,
+      items,
+      volunteers_needed: volunteers,
+      photo: photo.url,
+    });
+
+    // console.log(input)
+    const response = await fetch(`/api/opportunities/`, {
       method: 'POST',
-      body: JSON.stringify({
-        name,
-        sponsor,
-        description,
-        date,
-        location,
-        items,
-        volunteers
-        // imageUrl,
-      }),
+      body: input,
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
+      // /profile corresponds to homeRoutes.js on BE
       document.location.replace('/profile');
     } else {
-      alert('Failed to create project');
+      alert('Failed to create opportunity');
     }
   }
 };
+
 
 // const delButtonHandler = async (event) => {
 //   if (event.target.hasAttribute('data-id')) {

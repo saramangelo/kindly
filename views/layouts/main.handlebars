@@ -1,58 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>
+      Kindly
+    </title>
+    <link rel='stylesheet' href='/css/jass.css' />
+    <link rel='stylesheet' href='/css/style.css' />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kindly</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Kaushan+Script&family=Norican&family=Pattaya&family=Raleway:ital,wght@0,100;0,300;0,400;0,500;1,100;1,400;1,500&display=swap'
+      rel='stylesheet'
+    />
+  </head>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Kaushan+Script&family=Norican&family=Pattaya&family=Raleway:ital,wght@0,100;0,300;0,400;0,500;1,100;1,400;1,500&display=swap" rel="stylesheet">
-</head>
+  <body>
+    <div class='flex-column justify-space-around'>
+      <header class='display-flex justify-space-between align-center p-2'>
+        <h1>
+          <a id='header-links' href='/'>
+            Kindly
+          </a>
+          <span>
+            <h3>
+              <i>
+                Make a real impact in your community!
+              </i>
+            </h3>
+          </span>
+        </h1>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2" ">
-      <h1>
+        <nav>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+            <a id='header-links' href='/profile'>
+              profile
+            </a>
+            |
+            <span id='logout'>
+              <a id='header-links' id='logout'>
+                logout
+              </a>
+            </span>
+          {{else}}
+            <a id='header-links' href='/login'>
+              login
+            </a>
+          {{/if}}
+        </nav>
+      </header>
 
-        <a id="header-links" href="/">Kindly</a>
-       <span><h3><i> Make a real impact in your community!</i></h3></span>
-      </h1>
-      
+      <main class='container container-fluid mt-5 fw-light'>
+        <!-- Render the sub layout -->
+        {{{body}}}
+      </main>
 
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a id="header-links"  href="/profile">profile</a> |
-        <a id="header-links"  id="logout">logout</a>
-        {{else}}
-        <a id="header-links" href="/login">login</a>
-        {{/if}}
-      </nav>
-     
-    </header>
+      <hr />
+      <footer>
+        Made with love 
+        <br />
+        © 2023 Edmond Buck, Owen Garret, Sara Angelo and Salma Loum
+      </footer>
+    </div>
 
-    <main class= "container container-fluid mt-5 fw-ligh ">
-    
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-
- <hr> 
-    <footer>
-      Made with love &#128151;
-      <br>
-          © 2023 Edmond Buck, Owen Garret, Sara Angelo and Salma Loum
-    </footer>
-  </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
-
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src='./js/logout.js'></script>
+    {{/if}}
+  </body>
 </html>

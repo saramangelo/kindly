@@ -32,7 +32,10 @@ Salma Loum,
 Owen Garrett, 
 Edmond Buck, 
 Sara Angelo
-  
+
+Bootstrap
+Cloudinary
+Google Fonts
   
 ## License
 MIT License
