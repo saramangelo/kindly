@@ -18,7 +18,7 @@ body {
   position: relative;
   font-family: 'Goudy Bookletter 1911', sans-serif;
   font-size: 20px;
-  background: rgb(7, 84, 98);
+
   background: linear-gradient(
     0deg,
     rgba(7, 84, 98, 1) 0%,
@@ -69,11 +69,14 @@ a:hover,
 #logout:hover {
   color: var(--light);
   text-shadow: 1px 1px 1px var(--teal);
+  text-decoration: none;
 }
 footer {
   margin: 20px;
   font-size: 15px;
   text-align: center;
+  height: 50px;
+  border-top: black 1px solid;
 }
 
 hr {
@@ -81,6 +84,7 @@ hr {
   border-width: 0;
   background-color: black;
 }
+
 /* ID Selectors */
 #header-links,
 #logout {
@@ -101,6 +105,10 @@ hr {
   background-color: black;
 }
 
+.btn.btn-primary:hover {
+  background-color: var(--light);
+  color: black;
+}
 .center {
   display: block;
   margin-left: auto;
@@ -108,10 +116,29 @@ hr {
   margin-top: 30px;
 }
 
-/*
-.dollar-amount {
+.cloudinary-button {
+  background-color: black;
+}
+
+.container {
+  max-width: 2000px;
+}
+
+.cloudinary-button {
+  background-color: black;
+}
+
+/* .dollar-amount {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
 }
+
+
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+
 */

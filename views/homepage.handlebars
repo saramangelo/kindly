@@ -1,7 +1,7 @@
 <!-- Loop over each object in the opportunities array -->
 {{#each opportunities as |opportunity| }}
-<div class="row mb-4 opportunity">
-  <div class="col-md-5">
+<div class="row mb-8 opportunity">
+  <div class="col-md-4">
     <h2>
       <a href="/opportunity/{{opportunity.id}}">{{opportunity.name}}</a>
     </h2>
@@ -26,22 +26,26 @@
       </tr>
     </div>
 
-    <div class='col-md-7'>
-      <figure class='figure'>
-        <img
-          class='figure-img img-fluid rounded center'
-          src="{{opportunity.photo}}"
-          alt="{{opportunity.photo.alt}}"
-          width='200px'
-        />
-      </figure>
+
+<hr/>
+      <div class='col-md-4'>
+ 
+        <figure class='figure'>
+          <img
+            class='figure-img img-fluid rounded center'
+            src="{{opportunity.photo}}"
+            alt="{{opportunity.photo.alt}}"
+            width='200px'
+          />
+        </figure>
+      </div>
     </div>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{opportunity.description}}
-    </p>
-  </div>
+
+    <div class="col-md-8">
+      <p>
+        {{opportunity.description}}
+      </p>
+    </div>
 </div>
 {{/each}}
 
