@@ -1,4 +1,4 @@
-<div class='row'>
+<div class='d-flex row'>
   <div class='col-auto'>
     <h2>
       Welcome,
@@ -16,9 +16,9 @@
 
     {{! cloudinary widget }}
     {{! Need to add this widget to profile sign-up }}
-    <div class='form-group'>
-      <div>
-        <label for='upload_widget'>
+    <form class='form new-opportunity-form'>
+      <div class='mb-3'>
+        <label for='upload_widget' class='form-label'>
           Upload Event Images below:
         </label>
         <br />
@@ -27,95 +27,94 @@
           Upload Event Images
         </button>
       </div>
-    </div>
 
-    <form class='form new-opportunity-form'>
-      <div class='form-group'>
+      <div class='mb-3'>
         <label for='opportunity-name'>
           Event Name:
         </label>
+
         <input
-          class='form-input'
+          class='form-control'
           type='text'
           id='opportunity-name'
           name='opportunity-name'
         />
       </div>
 
-      <div class='form-group'>
+      <div class='mb-3'>
         <label for='organization-name'>
           Who is sponsoring this opportunity?
         </label>
         <input
-          class='form-input'
+          class='form-control'
           type='text'
           id='organization-name'
           name='organization-name'
         />
       </div>
 
-      <div class='form-group'>
+      <div class='mb-3'>
         <label for='opportunity-description'>
           Please provide details about this opportunity:
         </label>
         <textarea
-          class='form-input'
+          class='form-control'
           type='text'
           id='opportunity-description'
           name='opportunity-description'
         ></textarea>
       </div>
 
-      <div class='form-group'>
+      <div class='mb-3'>
         <label for='date-of-opp'>
           When is it happening? MM/DD/YYY
         </label>
         <input
-          class='form-input'
+          class='form-control'
           type='text'
           id='date-of-opp'
           name='date-of-opp'
         />
       </div>
 
-      <div class='form-group'>
+      <div class='mb-3'>
         <label for='opportunity-location'>
           And where?
         </label>
         <input
-          class='form-input'
+          class='form-control'
           type='text'
           id='opportunity-location'
           name='opportunity-location'
         />
       </div>
 
-      <div class='form-group'>
+      <div class='mb-3'>
         <label for='items-to-bring'>
           Is there anything volunteers should bring to the event?
         </label>
         <input
-          class='form-input'
+          class='form-control'
           type='text'
           id='items-to-bring'
           name='items-to-bring'
         />
       </div>
 
-      <div class='form-group'>
+      <div class='mb-3'>
         <label for='volunteers-needed'>
           Volunteers needed:
         </label>
         <input
-          class='form-input'
+          class='form-control'
           type='number'
           id='volunteers-needed'
           name='volunteers-needed'
         />
       </div>
 
-      <div class='form-group'>
-        <button type='submit' class='btn btn-primary'>
+      <div class='mb-3'>
+        <button type='submit' class='btn btn-dark'>
           Create
         </button>
       </div>
