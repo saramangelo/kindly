@@ -11,11 +11,11 @@ Opportunity.init(
       primaryKey: true,
       autoIncrement: true,
     },
-       // opportunity name
-       name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+    // opportunity name
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     // name of org sponsoring opp
     organization_name: {
       type: DataTypes.STRING,
@@ -52,7 +52,7 @@ Opportunity.init(
       type: DataTypes.STRING,
     },
 
-  // user_id referencing ID of User who created this opportunity
+    // user_id referencing ID of User who created this opportunity
 
     user_id: {
       type: DataTypes.INTEGER,

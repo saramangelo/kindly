@@ -1,15 +1,17 @@
 <html lang='en'>
-
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Kindly</title>
+    <title>
+      Kindly
+    </title>
     <link rel='stylesheet' href='/css/jass.css' />
     <link rel='stylesheet' href='/css/style.css' />
+
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link
-      href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Kaushan+Script&family=Norican&family=Pattaya&display=swap'
+      href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Kaushan+Script&family=Norican&family=Pattaya&family=Raleway:ital,wght@0,100;0,300;0,400;0,500;1,100;1,400;1,500&display=swap'
       rel='stylesheet'
     />
   </head>
@@ -18,35 +20,48 @@
     <div class='flex-column justify-space-around'>
       <header class='display-flex justify-space-between align-center p-2'>
         <h1>
-
-          <a id='header-links' href='/'>Kindly</a>
+          <a id='header-links' href='/'>
+            Kindly
+          </a>
+          <span>
+            <h3>
+              <i>
+                Make a real impact in your community!
+              </i>
+            </h3>
+          </span>
         </h1>
+
         <nav>
           <!-- Conditionally render login or logout links -->
-          {{! if logged in, show a logout button }}
           {{#if logged_in}}
-            <a id='header-links' href='/profile'>profile</a>
+            <a id='header-links' href='/profile'>
+              profile
+            </a>
             |
-
-             <span id="logout">
-              <a id='header-links' id='logout'>logout</a></span>
-
-
+            <span id='logout'>
+              <a id='header-links' id='logout'>
+                logout
+              </a>
+            </span>
           {{else}}
-
-            {{! if not logged in, just show login link }}
-            <a id='header-links' href='/login'>login</a>
-
+            <a id='header-links' href='/login'>
+              login
+            </a>
           {{/if}}
         </nav>
       </header>
 
-      <main class='container container-fluid mt-5'>
+      <main class='container container-fluid mt-5 fw-light'>
         <!-- Render the sub layout -->
         {{{body}}}
       </main>
-      <footer>
 
+      <hr />
+      <footer>
+        Made with love 
+        <br />
+        © 2023 Edmond Buck, Owen Garret, Sara Angelo and Salma Loum
       </footer>
     </div>
 
@@ -55,5 +70,4 @@
       <script src='./js/logout.js'></script>
     {{/if}}
   </body>
-
 </html>

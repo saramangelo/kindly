@@ -10,9 +10,32 @@
        volunteers needed!
     </p>
 
-    <p>Created by {{opportunity.user.name}}</p>
+        <h4>
+          {{opportunity.description}}
+        </h4>
+        <h6>
+          <span class='volunteers-needed'>
+            {{volunteers_needed}}
+          </span>
+          volunteers needed!
+        </h6>
 
-  <p>
+        <p>
+          Created by {{opportunity.user.name}}
+        </p>
+      </tr>
+    </div>
+
+    <div class='col-md-7'>
+      <figure class='figure'>
+        <img
+          class='figure-img img-fluid rounded center'
+          src="{{opportunity.photo}}"
+          alt="{{opportunity.photo.alt}}"
+          width='200px'
+        />
+      </figure>
+    </div>
   </div>
   <div class="col-md-7">
     <p>
