@@ -24,6 +24,9 @@ const newFormHandler = async (event) => {
     volunteers
   ) {
     console.log(photo)
+    if (!photo) {
+      alert('Please upload a photo!')
+    }
     let input = JSON.stringify({
       name,
       organization_name: sponsor,
