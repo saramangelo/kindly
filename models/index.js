@@ -16,7 +16,7 @@ Opportunity.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-Comment.belongsTo(User,{
+Comments.belongsTo(User,{
   foreignKey: 'user_id'
 });
 
