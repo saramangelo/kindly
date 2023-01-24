@@ -115,7 +115,6 @@ const newFormHandler = async (event) => {
       location,
       items,
     };
-   
 
     if (post_id === 0) {
       response = await fetch(`/api/opportunities`, {
@@ -125,23 +124,23 @@ const newFormHandler = async (event) => {
           'Content-Type': 'application/json',
         },
       });
+    } else {
+      let updated_post = { ...input, id: post_id };
+
+      response = await fetch(`/api/opportunities`, {
+        method: 'PUT',
+        body: JSON.stringify(updated_post),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
     }
-  } else {
-    let updated_post = { ...input, id: post_id };
 
-    response = await fetch(`/api/opportunities`, {
-      method: 'PUT',
-      body: JSON.stringify(updated_post),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-  }
-
-  if (response.ok) {
-    document.location.replace('/profile');
-  } else {
-    alert('Failed to create blog');
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to create blog');
+    }
   }
 };
 
