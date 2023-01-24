@@ -1,5 +1,6 @@
 // FRONT END - Creating opportunity on front end here, sending to the back end
 // This corresponds with opportunityRoutes.js on BE
+let post_id = 0;
 
 const newFormHandler = async (event) => {
   event.preventDefault();
@@ -35,12 +36,12 @@ const newFormHandler = async (event) => {
        //     myModal.show()
        //   })
        // }
-       $(document).ready(function(){
-        $("#myBtn").click(function(){
-          $("#myModal").modal();
-          console.log('clicked')
-        });
-      });
+      //  $(document).ready(function(){
+      //   $("#myBtn").click(function(){
+      //     $("#myModal").modal();
+      //     console.log('clicked')
+      //   });
+      // });
 
     console.log(photo);
 
@@ -92,6 +93,26 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const editButtonHandler = async (event) => {
+  event.preventDefault();
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
+
+    const response = await fetch(`/api/opportunities/${id}`);
+    const data = await response.json();
+    console.log(data);
+
+    name = data.name;
+    sponsor = data.sponsor;
+    description = data.description;
+    date = data.date;
+    location = data.location;
+    items = data.items;
+    volunteers = data.volunteers;
+    post_id = data.id;
+  }
+};
+
 document
   .querySelector('.new-opportunity-form')
   .addEventListener('submit', newFormHandler);
@@ -99,4 +120,8 @@ document
 document
   .querySelector('.opportunity-list')
   .addEventListener('click', delButtonHandler);
+
+  document
+  .querySelector(".edit-btn")
+  .addEventListener("click", editButtonHandler);
 

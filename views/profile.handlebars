@@ -64,7 +64,7 @@
 
       <div class='mb-3'>
         <label for='date-of-opp'>
-          When is it happening? MM/DD/YYY
+          When is it happening? MM/DD/YYYY
         </label>
         <input
           class='form-control'
@@ -76,7 +76,7 @@
 
       <div class='mb-3'>
         <label for='opportunity-location'>
-          And where?
+          Where is it happening?
         </label>
         <input
           class='form-control'
@@ -88,7 +88,7 @@
 
       <div class='mb-3'>
         <label for='items-to-bring'>
-          Is there anything volunteers should bring to the event?
+          Please list the items for volunteers to bring to this event:
         </label>
         <input
           class='form-control'
@@ -100,7 +100,7 @@
 
       <div class='mb-3'>
         <label for='volunteers-needed'>
-          Volunteers needed:
+          Number of volunteers needed:
         </label>
         <input
           class='form-control'
@@ -170,6 +170,11 @@
         </div>
 
         <div class='col-md-4'>
+          <button
+            class='btn btn-sm btn-warning edit-btn'
+            data-id='{{opportunity.id}}'
+          >EDIT</button>
+
           <button class='btn btn-sm btn-dark' data-id='{{opportunity.id}}'>
             DELETE
           </button>
