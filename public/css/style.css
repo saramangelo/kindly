@@ -102,16 +102,20 @@ hr {
 }
 
 /* Class Selectors */
-.btn.btn-primary {
-  color: var(--light);
-  background-color: black;
-  margin: 20px;
+.btn {
+  margin: 5px;
 }
 
-.btn.btn-primary:hover {
+.btn:hover {
   background-color: var(--light);
   color: black;
 }
+
+.btn-light:hover {
+  background-color: black;
+  color: var(--light);
+}
+
 .center {
   display: block;
   margin-left: auto;
