@@ -5,7 +5,6 @@ class Comments extends Model {}
 
 Comments.init(
   {
-    // Comment
     comments: {
       type: DataTypes.TEXT,
       allowNull: false,

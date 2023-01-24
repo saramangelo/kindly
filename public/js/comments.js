@@ -11,7 +11,6 @@ const submitComment = async () => {
       opportunity_id: oppId,
     });
 
-    // console.log(input)
     const response = await fetch(`/api/comments/`, {
       method: 'POST',
       body: input,

@@ -67,7 +67,7 @@ console.log(input);
   }
 };
 
-// DELETE
+
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -79,9 +79,7 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      // alert('Failed to delete opportunity');
-      //TODO: target the modal
-      //TODO: change it to display block
+
     }
   }
 };
