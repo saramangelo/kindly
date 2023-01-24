@@ -83,7 +83,7 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to delete opportunity');
+      // alert('Failed to delete opportunity');
       //TODO: target the modal
       //TODO: change it to display block
     }

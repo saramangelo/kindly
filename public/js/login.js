@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
     } else {
-      alert(response.statusText);
+      // alert(response.statusText);
     }
   }
 };
@@ -40,7 +40,7 @@ const signupFormHandler = async (event) => {
       document.location.replace('/profile');
     } else {
       //TODO: add modal here 
-      alert(response.statusText);
+      // alert(response.statusText);
     }
   }
 };
