@@ -14,9 +14,6 @@ Kindly is a full-stack application where volunteer users can create an account, 
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Features](#features)
-- [How to Contribute](#how-to-contribute)
-- [Tests](#tests)
 - [Questions](#questions)
 
 ## Installation
@@ -25,9 +22,17 @@ Go to [app page](https:) and follow the prompts.
 
 ## Usage
 
-## Credits
+- Click on the `login` button on the homepage to sign up for a new profile, or login to your exisiting profile.
 
-<!-- include everyone's github username -->
+- When you're directed to the Profile page you'll be able to add your opportunity's information. Make sure you add all the information needed, including the image, to create the volunteering opportunity
+
+- Your opportunity will be displayed on the right side of your profile page.
+
+- Click on the opportunity to view its details.
+
+- Add a comment to the opportunity or click the `sign me up` button to take part of the opportunity.
+
+## Credits
 
 ### Developers:
 
