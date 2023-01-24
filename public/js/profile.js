@@ -28,17 +28,19 @@ const newFormHandler = async (event) => {
     photo.url
   ) {
 
-
-    // MODAL
-    console.log(photo)
-    // if (!photo.url) {
-    //   const myModal = new bootstrap.Modal(document.getElementById('myModal'), () =>{
-    //     myModal.show()
-    //   })
-    // }
-
-
-
+       // MODAL
+       console.log(photo)
+       // if (!photo.url) {
+       //   const myModal = new bootstrap.Modal(document.getElementById('myModal'), () =>{
+       //     myModal.show()
+       //   })
+       // }
+       $(document).ready(function(){
+        $("#myBtn").click(function(){
+          $("#myModal").modal();
+          console.log('clicked')
+        });
+      });
 
     console.log(photo);
 
@@ -98,9 +100,3 @@ document
   .querySelector('.opportunity-list')
   .addEventListener('click', delButtonHandler);
 
-  $(document).ready(function(){
-    $("#myBtn").click(function(){
-      $("#myModal").modal();
-      console.log('clicked')
-    });
-  });
