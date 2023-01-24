@@ -1,13 +1,14 @@
 <div class='row mt-4'>
   <div class='col-md-6'>
     <h2>Welcome, {{name}}!</h2>
-    <h4>
-      Create A New Volunteer Opportunity!
-    </h4>
+  </div>
+</div>
     <br />
 {{#if edit}}
 {{/if}}
 {{>opportunity-form}}
+
+
     {{#if opportunities.length}}
   <div class='col-md-6 opportunity-list'>
     <h4>
@@ -38,6 +39,7 @@
     {{/each}}
   </div>
 {{/if}}
+  </div>
 
 
 <script
