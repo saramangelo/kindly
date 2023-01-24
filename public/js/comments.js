@@ -1,11 +1,14 @@
 const submitComment = async () => {
   const comment = document.querySelector('#comment').value.trim();
-
+  const opportunity_id = document.querySelector('#opportunity');
+  let oppId = opportunity_id.getAttribute('data-id');
+  console.log(oppId);
   if (comment) {
     console.log(comment);
 
     let input = JSON.stringify({
       comment,
+      opportunity_id: oppId,
     });
 
     // console.log(input)

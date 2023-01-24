@@ -16,8 +16,12 @@ Opportunity.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-Comments.belongsTo(User,{
-  foreignKey: 'user_id'
+Opportunity.hasMany(Comments,{
+  foreignKey: 'opportunity_id'
 });
 
-module.exports = { User, Opportunity, Comments };
+Comments.belongsTo(User, {
+  foreignKey: 'user_id'
+})
+
+module.exports = { User, Opportunity };
