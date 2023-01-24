@@ -28,12 +28,5 @@ const submitComment = async () => {
   }
 };
 
-var b1 = document.getElementById("sign-up");
-
-b1.onclick = function() {
-     b1.style.background = "green";
-     
-}
-
 
 document.querySelector('.btn').addEventListener('click', submitComment);
