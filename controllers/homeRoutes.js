@@ -35,22 +35,23 @@ router.get('/opportunity/:id', async (req, res) => {
     console.log(req.params.id);
     const opportunityData = await Opportunity.findByPk(req.params.id, {
       include: [
-        {
+        { 
           model: User,
-          attributes: ['name'],
-        },
+        attributes: ['name']
+      },
 
-        {
-          model: Comments,
-          include: User,
-        },
+        // {
+        //   model: Comments,
+        //   include: User,
+        // },
       ],
     });
     console.log(opportunityData);
     const opportunity = opportunityData.get({ plain: true });
     console.log(opportunity);
     res.render('opportunity', {
-      opportunity
+      ...opportunity,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
