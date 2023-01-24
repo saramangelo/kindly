@@ -1,4 +1,4 @@
-// FRONT END - Creating opportunity on front end here, sending to the back end
+
 // This corresponds with opportunityRoutes.js on BE
 // let post_id = 0;
 
