@@ -1,5 +1,6 @@
 // FRONT END - Creating opportunity on front end here, sending to the back end
 // This corresponds with opportunityRoutes.js on BE
+let post_id = 0;
 
 const newFormHandler = async (event) => {
   event.preventDefault();
@@ -15,6 +16,8 @@ const newFormHandler = async (event) => {
   const volunteers = document.querySelector('#volunteers-needed').value.trim();
 
 
+ 
+
   if (
     name &&
     sponsor &&
@@ -26,15 +29,19 @@ const newFormHandler = async (event) => {
     photo.url
   ) {
 
-
-    // MODAL
-    console.log(photo)
-    if (!photo.url) {
-      const myModal = new bootstrap.Modal(document.getElementById('myModal'), () =>{
-        myModal.show()
-      })
-    }
-
+       // MODAL
+       console.log(photo)
+       // if (!photo.url) {
+       //   const myModal = new bootstrap.Modal(document.getElementById('myModal'), () =>{
+       //     myModal.show()
+       //   })
+       // }
+      //  $(document).ready(function(){
+      //   $("#myBtn").click(function(){
+      //     $("#myModal").modal();
+      //     console.log('clicked')
+      //   });
+      // });
 
     console.log(photo);
 
@@ -79,10 +86,30 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to delete opportunity');
+      // alert('Failed to delete opportunity');
       //TODO: target the modal
       //TODO: change it to display block
     }
+  }
+};
+
+const editButtonHandler = async (event) => {
+  event.preventDefault();
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
+
+    const response = await fetch(`/api/opportunities/${id}`);
+    const data = await response.json();
+    console.log(data);
+
+    name.value = data.name;
+    sponsor.value = data.sponsor;
+    description.value = data.description;
+    date.value = data.date;
+    location.value = data.location;
+    items.value = data.items;
+    volunteers.value = data.volunteers;
+    post_id = data.id;
   }
 };
 
@@ -93,3 +120,8 @@ document
 document
   .querySelector('.opportunity-list')
   .addEventListener('click', delButtonHandler);
+
+  document
+  .querySelector(".edit-btn")
+  .addEventListener("click", editButtonHandler);
+

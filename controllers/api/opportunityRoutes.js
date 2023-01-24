@@ -27,11 +27,32 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 
+
 // check that GET request is working, it is
 // router.get('/', (req, res) => {
 //   res.json("hello");
 // })
 
+router.get("/:id", withAuth, async (req, res) => {
+  try {
+    const opportunityData = await Opportunity.findOne({ where: { id: req.params.id } });
+    const opportunity = opportunityData.get({ plain: true });
+
+    res.status(200).json(opportunity);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.put("/", withAuth, async (req, res) => {
+  try {
+    const newOpportunity = await Opportunity.update(req.body, { where: { id: req.body.id } });
+
+    res.status(200).json(newOpportunity);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {

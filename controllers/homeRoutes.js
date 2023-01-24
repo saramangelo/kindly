@@ -1,7 +1,7 @@
 //This code creates a new Express Router, imports the Opportunity and User model from the models directory, and imports an authentication middleware from the utils directory.
 
 const router = require('express').Router();
-const { Opportunity, User } = require('../models');
+const { Opportunity, User, Comments } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -30,21 +30,25 @@ router.get('/', async (req, res) => {
   }
 });
 
-
-
 router.get('/opportunity/:id', async (req, res) => {
   try {
+    console.log(req.params.id);
     const opportunityData = await Opportunity.findByPk(req.params.id, {
       include: [
-        {
+        { 
           model: User,
-          attributes: ['name'],
-        },
+        attributes: ['name']
+      },
+
+        // {
+        //   model: Comments,
+        //   include: User,
+        // },
       ],
     });
-
+    console.log(opportunityData);
     const opportunity = opportunityData.get({ plain: true });
-
+    console.log(opportunity);
     res.render('opportunity', {
       ...opportunity,
       logged_in: req.session.logged_in,
@@ -67,14 +71,12 @@ router.get('/profile', withAuth, async (req, res) => {
     // renders profile.handlebars
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-
 
 router.get('/login', (req, res) => {
   // if the user is already logged in, redirect the request to another route
