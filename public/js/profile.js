@@ -14,6 +14,7 @@ const newFormHandler = async (event) => {
   const items = document.querySelector('#items-to-bring').value.trim();
   const volunteers = document.querySelector('#volunteers-needed').value.trim();
 
+
   if (
     name &&
     sponsor &&
@@ -21,9 +22,22 @@ const newFormHandler = async (event) => {
     date &&
     location &&
     items &&
-    volunteers
+    volunteers &&
+    photo.url
   ) {
+
+
+    // MODAL
+    console.log(photo)
+    if (!photo.url) {
+      const myModal = new bootstrap.Modal(document.getElementById('myModal'), () =>{
+        myModal.show()
+      })
+    }
+
+
     console.log(photo);
+
     let input = JSON.stringify({
       name,
       organization_name: sponsor,

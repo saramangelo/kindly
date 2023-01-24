@@ -49,7 +49,7 @@ Opportunity.init(
     },
     // This will save an image to database
     photo: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
 
     // user_id referencing ID of User who created this opportunity
