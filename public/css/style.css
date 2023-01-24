@@ -151,6 +151,16 @@ hr {
   padding: 20px;
 }
 
+.input-error {
+  border: 4px red solid;
+}
+.error-text {
+  color: red;
+  font-size: bold;
+  text-shadow: 1px 2px 2px black;
+  margin: 20px;
+}
+
 /* .dollar-amount {
   color: #056605;
   font-weight: bold;
