@@ -5,7 +5,7 @@
 //It then exports the router as a module.
 
 const router = require('express').Router();
-const { Opportunity, Comments } = require('../../models');
+const { Opportunity } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // This code imports the Express.js router, the Opportunity model from the models directory, and an authentication middleware from the utils directory.
@@ -26,7 +26,6 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.post('/', )
 
 
 // check that GET request is working, it is
