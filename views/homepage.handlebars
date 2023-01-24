@@ -1,27 +1,30 @@
 <!-- Loop over each object in the opportunities array -->
+
 {{#each opportunities as |opportunity|}}
-  <div class='row mb-6 opportunity'>
+  <div class='row mb-6'>
     <div class='col-md-6 opportunity'>
-      <h2>
-        <a href="/opportunity/{{opportunity.id}}">
-          {{opportunity.name}}
-        </a>
-      </h2>
+      <div class='center-text'>
+        <h2>
+          <a href="/opportunity/{{opportunity.id}}">
+            {{opportunity.name}}
+          </a>
+        </h2>
 
-      <p>
-        <span class='volunteers-needed'>
-          {{volunteers_needed}}
-        </span>
-        volunteers needed!
-      </p>
+        <p>
+          <span class='volunteers-needed'>
+            {{volunteers_needed}}
+          </span>
+          volunteers needed!
+        </p>
 
-      <h5>
-        {{opportunity.description}}
-      </h5>
+        <h5>
+          {{opportunity.description}}
+        </h5>
 
-      <p>
-        Created by {{opportunity.user.name}}
-      </p>
+        <p>
+          Created by {{opportunity.user.name}}
+        </p>
+      </div>
     </div>
 
     <div class='col-md-6 opportunity'>
@@ -34,5 +37,8 @@
         />
       </figure>
     </div>
+  </div>
+  <div class='seperator'>
+    <hr />
   </div>
 {{/each}}
