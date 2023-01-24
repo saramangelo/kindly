@@ -71,15 +71,15 @@ const newFormHandler = async (event) => {
         'input-error form-control';
     }
     if (!description) {
-      document.querySelector(' #opportunity-description').className =
+      document.querySelector('#opportunity-description').className =
         'input-error form-control';
     }
     if (!items) {
-      document.querySelector(' #items-to-bring').className =
+      document.querySelector('#items-to-bring').className =
         'input-error form-control';
     }
     if (!volunteers) {
-      document.querySelector(' #volunteers-needed').className =
+      document.querySelector('#volunteers-needed').className =
         'input-error form-control';
     }
 
