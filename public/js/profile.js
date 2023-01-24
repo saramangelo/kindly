@@ -23,7 +23,7 @@ const newFormHandler = async (event) => {
     items &&
     volunteers
   ) {
-    console.log(photo)
+    console.log(photo);
     let input = JSON.stringify({
       name,
       organization_name: sponsor,
@@ -48,11 +48,11 @@ const newFormHandler = async (event) => {
       // /profile corresponds to homeRoutes.js on BE
       document.location.replace('/profile');
     } else {
-      alert('Failed to create opportunity');
+      //TODO: target the modal
+      //TODO: change it to display block
     }
   }
 };
-
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -66,6 +66,8 @@ const delButtonHandler = async (event) => {
       document.location.replace('/profile');
     } else {
       alert('Failed to delete opportunity');
+      //TODO: target the modal
+      //TODO: change it to display block
     }
   }
 };

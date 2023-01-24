@@ -82,8 +82,9 @@ footer {
 
 hr {
   height: 2px;
-  border-width: 0;
   background-color: black;
+  width: 50%;
+  margin: auto;
 }
 
 /* ID Selectors */
@@ -132,10 +133,20 @@ hr {
 
 .opportunity {
   justify-content: center;
+  align-content: center;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  text-align: left;
 }
+
+.center-text {
+  max-width: 50%;
+  margin-left: 200px;
+}
+.seperator {
+  padding: 20px;
+}
+
 /* .dollar-amount {
   color: #056605;
   font-weight: bold;
