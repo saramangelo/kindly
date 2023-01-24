@@ -1,6 +1,6 @@
 // FRONT END - Creating opportunity on front end here, sending to the back end
 // This corresponds with opportunityRoutes.js on BE
-// let post_id = 0;
+let post_id = 0;
 
 const newFormHandler = async (event) => {
   event.preventDefault();
@@ -93,25 +93,25 @@ const delButtonHandler = async (event) => {
   }
 };
 
-// const editButtonHandler = async (event) => {
-//   event.preventDefault();
-//   if (event.target.hasAttribute("data-id")) {
-//     const id = event.target.getAttribute("data-id");
+const editButtonHandler = async (event) => {
+  event.preventDefault();
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
 
-//     const response = await fetch(`/api/opportunities/${id}`);
-//     const data = await response.json();
-//     console.log(data);
+    const response = await fetch(`/api/opportunities/${id}`);
+    const data = await response.json();
+    console.log(data);
 
-//     name.value = data.name;
-//     sponsor.value = data.sponsor;
-//     description.value = data.description;
-//     date.value = data.date;
-//     location.value = data.location;
-//     items.value = data.items;
-//     volunteers.value = data.volunteers;
-//     post_id = data.id;
-//   }
-// };
+    name.value = data.name;
+    sponsor.value = data.sponsor;
+    description.value = data.description;
+    date.value = data.date;
+    location.value = data.location;
+    items.value = data.items;
+    volunteers.value = data.volunteers;
+    post_id = data.id;
+  }
+};
 
 document
   .querySelector('.new-opportunity-form')
@@ -121,7 +121,7 @@ document
   .querySelector('.opportunity-list')
   .addEventListener('click', delButtonHandler);
 
-  // document
-  // .querySelector(".edit-btn")
-  // .addEventListener("click", editButtonHandler);
+  document
+  .querySelector(".edit-btn")
+  .addEventListener("click", editButtonHandler);
 
