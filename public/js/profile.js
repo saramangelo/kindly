@@ -27,10 +27,12 @@ const newFormHandler = async (event) => {
   ) {
 
     // MODAL
-    // console.log(photo)
-    // if (!photo.url) {
-    //       $("#myModal").modal();
-    // }
+    console.log(photo)
+    if (!photo.url) {
+      const myModal = new bootstrap.Modal(document.getElementById('myModal'), () =>{
+        myModal.show()
+      })
+    }
 
     let input = JSON.stringify({
       name,
