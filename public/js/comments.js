@@ -9,7 +9,7 @@ const submitComment = async () => {
     });
 
     // console.log(input)
-    const response = await fetch(`/api/opportunities/`, {
+    const response = await fetch(`/api/comments/`, {
       method: 'POST',
       body: input,
       headers: {
@@ -18,8 +18,8 @@ const submitComment = async () => {
     });
 
     if (response.ok) {
-      // /profile corresponds to homeRoutes.js on BE
-      document.location.replace('/profile');
+
+      document.location.replace('/opportunities');
     } else {
     }
   }
