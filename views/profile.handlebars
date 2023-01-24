@@ -24,12 +24,7 @@
         <br />
         <br />
         <button id='upload_widget' class='cloudinary-button'>Upload Files</button></div>
-    </div>
 
- 
-
-
-    <form class='form new-opportunity-form'>
       <div class='form-group'>
         <label for='opportunity-name'>
           Event Name:
@@ -115,78 +110,81 @@
         />
       </div>
 
+      <!-- Modal -->
+      <div class='container'>
+        <!-- Trigger the modal with a button -->
+        <button
+          type='button'
+          class='btn btn-info btn-lg'
+          data-toggle='modal'
+          data-target='#myModal'
+        >Create</button>
 
+        <!-- Modal -->
+        <div class='modal fade' id='myModal' role='dialog'>
+          <div class='modal-dialog'>
 
-      <div class='form-group'>
-        <button type='submit' type='button' class='btn btn-info btn-lg' id='myBtn' class='btn btn-primary'>
-          Create
-        </button>
+            <!-- Modal content-->
+            <div class='modal-content'>
+              <div class='modal-header'>
+                <button
+                  type='button'
+                  class='close'
+                  data-dismiss='modal'
+                >&times;</button>
+                <h4 class='modal-title'>Error</h4>
+              </div>
+              <div class='modal-body'>
+                <p>Please upload a photo prior to clicking 'Create'</p>
+              </div>
+              <div class='modal-footer'>
+                <button
+                  type='button'
+                  class='btn btn-default'
+                  data-dismiss='modal'
+                >Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </form>
   </div>
+</div>
 
-  {{#if opportunities.length}}
-    <div class='col-md-6 opportunity-list'>
-      <h4>
-        Current Opportunities:
-      </h4>
+{{#if opportunities.length}}
+  <div class='col-md-6 opportunity-list'>
+    <h4>
+      Current Opportunities:
+    </h4>
 
-      {{#each opportunities as |opportunity|}}
-        <div class='row mb-2'>
-          <div class='col-md-8'>
-            <h2>
-              <a href="/opportunity/{{opportunity.id}}">
-                {{opportunity.name}}
-              </a>
-            </h2>
-          </div>
-
-          <div class='col-md-4'>
-            <button class='btn btn-sm btn-dark' data-id="{{opportunity.id}}">
-              DELETE
-            </button>
-          </div>
+    {{#each opportunities as |opportunity|}}
+      <div class='row mb-2'>
+        <div class='col-md-8'>
+          <h2>
+            <a href='/opportunity/{{opportunity.id}}'>
+              {{opportunity.name}}
+            </a>
+          </h2>
         </div>
-      {{/each}}
-    </div>
-  {{/if}}
 
-  <!-- Modal -->
-  <div
-    class='modal fade show'
-    id='exampleModal'
-    tabindex='-1'
-    aria-labelledby='exampleModalLabel'
-    style='display:hide; padding-right:1px;'
-    aria-modal='true'
-    role='dialog'
-  >
-    <div class='modal-dialog'>
-      <div class='modal-content'>
-        <div class='modal-header'>
-          <h5 class='modal-title' id='exampleModalLabel'>
-            Error
-          </h5>
-          <button
-            type='button'
-            class='btn-close'
-            data-bs-dismiss='modal'
-            aria-label='Close'
-          ></button>
-        </div>
-        <div class='modal-body'>
-          Please upload an image of your event to proceed.
-        </div>
-        <div class='modal-footer'>
-          <button type='button' class='btn btn-dark' data-bs-dismiss='modal'>
-            Close
+        <div class='col-md-4'>
+          <button class='btn btn-sm btn-dark' data-id='{{opportunity.id}}'>
+            DELETE
           </button>
         </div>
       </div>
-    </div>
+    {{/each}}
   </div>
-</div>
+{{/if}}
 
+<script
+  src='https://code.jquery.com/jquery-3.6.3.min.js'
+  integrity='sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU='
+  crossorigin='anonymous'
+></script>
 <script
   src='https://upload-widget.cloudinary.com/global/all.js'
   type='text/javascript'

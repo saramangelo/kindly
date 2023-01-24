@@ -15,6 +15,8 @@ const newFormHandler = async (event) => {
   const volunteers = document.querySelector('#volunteers-needed').value.trim();
 
 
+ 
+
   if (
     name &&
     sponsor &&
@@ -29,11 +31,13 @@ const newFormHandler = async (event) => {
 
     // MODAL
     console.log(photo)
-    if (!photo.url) {
-      const myModal = new bootstrap.Modal(document.getElementById('myModal'), () =>{
-        myModal.show()
-      })
-    }
+    // if (!photo.url) {
+    //   const myModal = new bootstrap.Modal(document.getElementById('myModal'), () =>{
+    //     myModal.show()
+    //   })
+    // }
+
+
 
 
     console.log(photo);
@@ -93,3 +97,10 @@ document
 document
   .querySelector('.opportunity-list')
   .addEventListener('click', delButtonHandler);
+
+  $(document).ready(function(){
+    $("#myBtn").click(function(){
+      $("#myModal").modal();
+      console.log('clicked')
+    });
+  });
