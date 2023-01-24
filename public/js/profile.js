@@ -86,39 +86,39 @@ const newFormHandler = async (event) => {
     document.querySelector('.error-text').textContent =
       'You need to complete all fields & add an image to create an opportunity';
   }
+};
 
-  const delButtonHandler = async (event) => {
+const delButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/opportunities/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    }
+  }
+
+  const editButtonHandler = async (event) => {
+    event.preventDefault();
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
 
-      const response = await fetch(`/api/opportunities/${id}`, {
-        method: 'DELETE',
-      });
+      const response = await fetch(`/api/opportunities/${id}`);
+      const data = await response.json();
+      console.log(data);
 
-      if (response.ok) {
-        document.location.replace('/profile');
-      }
+      name.value = data.name;
+      sponsor.value = data.sponsor;
+      description.value = data.description;
+      date.value = data.date;
+      location.value = data.location;
+      items.value = data.items;
+      volunteers.value = data.volunteers;
+      post_id = data.id;
     }
-
-    const editButtonHandler = async (event) => {
-      event.preventDefault();
-      if (event.target.hasAttribute('data-id')) {
-        const id = event.target.getAttribute('data-id');
-
-        const response = await fetch(`/api/opportunities/${id}`);
-        const data = await response.json();
-        console.log(data);
-
-        name.value = data.name;
-        sponsor.value = data.sponsor;
-        description.value = data.description;
-        date.value = data.date;
-        location.value = data.location;
-        items.value = data.items;
-        volunteers.value = data.volunteers;
-        post_id = data.id;
-      }
-    };
   };
 };
 
