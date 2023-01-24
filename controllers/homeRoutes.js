@@ -1,3 +1,5 @@
+//This code creates a new Express Router, imports the Opportunity and User model from the models directory, and imports an authentication middleware from the utils directory.
+
 const router = require('express').Router();
 const { Opportunity, User } = require('../models');
 const withAuth = require('../utils/auth');

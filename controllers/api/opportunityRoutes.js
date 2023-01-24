@@ -4,12 +4,14 @@
 
 //It then exports the router as a module.
 
-
 const router = require('express').Router();
 const { Opportunity } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// create opportunity
+// This code imports the Express.js router, the Opportunity model from the models directory, and an authentication middleware from the utils directory.
+
+// It creates a new Express Router, import the opportunity model from the models directory and import the withAuth middleware from the utils directory to use it for the protected routes .
+
 router.post('/', withAuth, async (req, res) => {
   try {
     console.log(req.body)
