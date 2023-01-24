@@ -1,212 +1,15 @@
-<div class='d-flex row'>
-  <div class='col-auto'>
-    <h2>
-      Welcome,
-      {{name}}!
-    </h2>
-  </div>
-</div>
-
 <div class='row mt-4'>
   <div class='col-md-6'>
-    <h4>
-      Create A New Volunteer Opportunity!
-    </h4>
-    <br />
-
-    {{! cloudinary widget }}
-
-    <form class='form new-opportunity-form'>
-      <div class='mb-3'>
-        <label for='upload_widget' class='form-label'>
-          Upload Event Images below:
-        </label>
-        <br />
-        <br />
-        <button id='upload_widget' class='cloudinary-button'>Upload Files</button>
-
-      </div>
-
-      <div class='form-group'>
-        <label for='opportunity-name'>
-          Event Name:
-        </label>
-
-        <input
-          class='form-control'
-          type='text'
-          id='opportunity-name'
-          name='opportunity-name'
-        />
-      </div>
-
-      <div class='mb-3'>
-        <label for='organization-name'>
-          Who is sponsoring this opportunity?
-        </label>
-        <input
-          class='form-control'
-          type='text'
-          id='organization-name'
-          name='organization-name'
-        />
-      </div>
-
-      <div class='mb-3'>
-        <label for='opportunity-description'>
-          Please provide details about this opportunity:
-        </label>
-        <textarea
-          class='form-control'
-          type='text'
-          id='opportunity-description'
-          name='opportunity-description'
-        ></textarea>
-      </div>
-
-      <div class='mb-3'>
-        <label for='date-of-opp'>
-          When is it happening? MM/DD/YYYY
-        </label>
-        <input
-          class='form-control'
-          type='text'
-          id='date-of-opp'
-          name='date-of-opp'
-        />
-      </div>
-
-      <div class='mb-3'>
-        <label for='opportunity-location'>
-          Where is it happening?
-        </label>
-        <input
-          class='form-control'
-          type='text'
-          id='opportunity-location'
-          name='opportunity-location'
-        />
-      </div>
-
-      <div class='mb-3'>
-        <label for='items-to-bring'>
-          Please list the items for volunteers to bring to this event:
-        </label>
-        <input
-          class='form-control'
-          type='text'
-          id='items-to-bring'
-          name='items-to-bring'
-        />
-      </div>
-
-      <div class='mb-3'>
-        <label for='volunteers-needed'>
-          Number of volunteers needed:
-        </label>
-        <input
-          class='form-control'
-          type='number'
-          id='volunteers-needed'
-          name='volunteers-needed'
-        />
-      </div>
-
-      <div class='form-group'>
-        <button
-          type='submit'
-          type='button'
-          class='btn btn-info btn-lg'
-          id='myBtn'
-          class='btn btn-primary'
-        >
-          Create
-        </button>
-      </div>
-
-      {{! <!-- SARA Modal -->
-      <div class='container'>
-        <!-- Trigger the modal with a button -->
-        <button
-          type='button'
-          class='btn btn-info btn-lg'
-          data-toggle='modal'
-          data-target='#myModal'
-        >Create</button>
-
-        <div class='modal fade' id='myModal' role='dialog'>
-          <div class='modal-dialog'>
-
-            <!-- Modal content-->
-            <div class='modal-content'>
-              <div class='modal-header'>
-                <button
-                  type='button'
-                  class='close'
-                  data-dismiss='modal'
-                >&times;</button>
-                <h4 class='modal-title'>Error</h4>
-              </div>
-              <div class='modal-body'>
-                <p>Please upload a photo prior to clicking 'Create'</p>
-              </div>
-              <div class='modal-footer'>
-                <button
-                  type='button'
-                  class='btn btn-default'
-                  data-dismiss='modal'
-                >Close</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div> }}
-      {{! END SARA MODAL }}
-
-      <!-- SALMA Modal -->
-      {{! <div
-    class='modal fade show'
-    id='exampleModal'
-    tabindex='-1'
-    aria-labelledby='exampleModalLabel'
-    style='display:hide; padding-right:1px;'
-    aria-modal='true'
-    role='dialog'
-  >
-    <div class='modal-dialog'>
-      <div class='modal-content'>
-        <div class='modal-header'>
-          <h5 class='modal-title' id='exampleModalLabel'>
-            Error
-          </h5>
-          <button
-            type='button'
-            class='btn-close'
-            data-bs-dismiss='modal'
-            aria-label='Close'
-          ></button>
-        </div>
-        <div class='modal-body'>
-          Please upload an image of your event to proceed.
-        </div>
-        <div class='modal-footer'>
-          <button type='button' class='btn btn-dark' data-bs-dismiss='modal'>
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> }}
-      {{! END SALMA MODAL }}
-
-    </form>
+    <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
+    <br />
+{{#if edit}}
+{{/if}}
+{{>opportunity-form}}
 
-{{#if opportunities.length}}
+
+    {{#if opportunities.length}}
   <div class='col-md-6 opportunity-list'>
     <h4>
       Current Opportunities:
@@ -236,6 +39,8 @@
     {{/each}}
   </div>
 {{/if}}
+  </div>
+
 
 <script
   src='https://upload-widget.cloudinary.com/global/all.js'
