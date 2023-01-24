@@ -2,8 +2,8 @@
   <h1>
     {{name}}
   </h1>
-  <div id="opportunity" data-id="{{opportunity.id}}"></div>
-  <img src="{{photo}}" alt='sponsor image' />
+  <div id='opportunity' data-id="{{opportunity.id}}"></div>
+  <img src="{{photo}}" alt='sponsor image' class='image-height' />
   <h3>
     Hosted by {{organization_name}} |  on {{date_of_opp}} |  in {{location}}
   </h3>
@@ -22,20 +22,27 @@
     </span>
     volunteers needed
   </p>
-      <div>
-      <h3>Leave a comment below!</h3>
-      <br />
-
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1"></label>
-    <textarea placeholder="Type your comment here..." class="form-control comment" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-    </div>
+  <div>
+    <h3>
+      Leave a comment below!
+    </h3>
     <br />
+
+    <div class='form-group'>
+      <label for='exampleFormControlTextarea1'></label>
+      <textarea
+        placeholder='Type your comment here...'
+        class='form-control comment'
+        id='exampleFormControlTextarea1'
+        rows='3'
+      ></textarea>
+    </div>
+  </div>
+  <br />
   <p>
     <button class='btn btn-primary'>
       Comment
     </button>
   </p>
 </div>
-<script src="./js/comments.js"></script>
+<script src='./js/comments.js'></script>

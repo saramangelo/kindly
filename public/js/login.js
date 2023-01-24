@@ -48,7 +48,7 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      /*if (!name) {
+      if (!name) {
         document.querySelector('#name-signup').className =
           'input-error form-control';
       }
@@ -60,9 +60,8 @@ const signupFormHandler = async (event) => {
         document.querySelector('#password-signup').className =
           'input-error form-control';
       }
-
       document.querySelector('.error-text').textContent =
-        'You need to complete all fields to create a profile'; */
+        'You need to complete all fields to create a profile';
     }
   }
 };
