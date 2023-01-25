@@ -20,15 +20,7 @@ const newFormHandler = async (event) => {
   let location = location.value.trim();
   let items = volunteers.value.trim();
 
-  if (
-    name &&
-    sponsor &&
-    description &&
-    date &&
-    location &&
-    items &&
-    volunteers
-  ) {
+  if (name && sponsor && description && date && location && volunteers) {
     let response;
     let input = {
       name,
@@ -38,7 +30,7 @@ const newFormHandler = async (event) => {
       location,
       items,
     };
-    console.log(input);
+
     if (post_id === 0) {
       response = await fetch(`/api/opportunities`, {
         method: 'POST',
@@ -60,42 +52,47 @@ const newFormHandler = async (event) => {
     }
 
     if (response.ok) {
+      // /profile corresponds to homeRoutes.js on BE
       document.location.replace('/profile');
-    } else {
-      if (!name) {
-        document.querySelector('#opportunity-name').className =
-          'input-error form-control';
-      }
-      if (!sponsor) {
-        document.querySelector('#organization-name').className =
-          'input-error form-control';
-      }
-      if (!date) {
-        document.querySelector('#date-of-opp').className =
-          'input-error form-control';
-      }
-      if (!location) {
-        document.querySelector('#opportunity-location').className =
-          'input-error form-control';
-      }
-      if (!description) {
-        document.querySelector(' #opportunity-description').className =
-          'input-error form-control';
-      }
-      if (!items) {
-        document.querySelector(' #items-to-bring').className =
-          'input-error form-control';
-      }
-      if (!volunteers) {
-        document.querySelector(' #volunteers-needed').className =
-          'input-error form-control';
-      }
+
+    }
+
+    //Error bars when no entry is provided by users.
+  } else {
+    if (!name) {
+      document.querySelector('#opportunity-name').className =
+        'input-error form-control';
+    }
+    if (!sponsor) {
+      document.querySelector('#organization-name').className =
+        'input-error form-control';
+    }
+    if (!date) {
+      document.querySelector('#date-of-opp').className =
+        'input-error form-control';
+    }
+    if (!location) {
+      document.querySelector('#opportunity-location').className =
+        'input-error form-control';
+    }
+    if (!description) {
+      document.querySelector(' #opportunity-description').className =
+        'input-error form-control';
+    }
+    if (!items) {
+      document.querySelector(' #items-to-bring').className =
+        'input-error form-control';
+    }
+    if (!volunteers) {
+      document.querySelector(' #volunteers-needed').className =
+        'input-error form-control';
+    }
+
 
       document.querySelector('.error-text').textContent =
         'You need to complete all fields & add an image to create an opportunity';
     }
   }
-
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
