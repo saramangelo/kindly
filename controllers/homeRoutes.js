@@ -40,10 +40,10 @@ router.get('/opportunity/:id', async (req, res) => {
         attributes: ['name']
       },
 
-        // {
-        //   model: Comments,
-        //   include: User,
-        // },
+        {
+          model: Comments,
+          include: User,
+        },
       ],
     });
     console.log(opportunityData);
