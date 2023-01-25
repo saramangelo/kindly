@@ -38,7 +38,7 @@ const newFormHandler = async (event) => {
       location,
       items,
     };
-console.log(input);
+    console.log(input);
     if (post_id === 0) {
       response = await fetch(`/api/opportunities`, {
         method: 'POST',
@@ -62,74 +62,72 @@ console.log(input);
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-     if (!name) {
-      document.querySelector('#opportunity-name').className =
-        'input-error form-control';
-    }
-    if (!sponsor) {
-      document.querySelector('#organization-name').className =
-        'input-error form-control';
-    }
-    if (!date) {
-      document.querySelector('#date-of-opp').className =
-        'input-error form-control';
-    }
-    if (!location) {
-      document.querySelector('#opportunity-location').className =
-        'input-error form-control';
-    }
-    if (!description) {
-      document.querySelector(' #opportunity-description').className =
-        'input-error form-control';
-    }
-    if (!items) {
-      document.querySelector(' #items-to-bring').className =
-        'input-error form-control';
-    }
-    if (!volunteers) {
-      document.querySelector(' #volunteers-needed').className =
-        'input-error form-control';
-    }
-
-    document.querySelector('.error-text').textContent =
-      'You need to complete all fields & add an image to create an opportunity';
-  }
-
-
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/opportunities/${id}`, {
-      method: 'DELETE',
-    });
-
-      if (response.ok) {
-        document.location.replace('/profile');
+      if (!name) {
+        document.querySelector('#opportunity-name').className =
+          'input-error form-control';
       }
+      if (!sponsor) {
+        document.querySelector('#organization-name').className =
+          'input-error form-control';
+      }
+      if (!date) {
+        document.querySelector('#date-of-opp').className =
+          'input-error form-control';
+      }
+      if (!location) {
+        document.querySelector('#opportunity-location').className =
+          'input-error form-control';
+      }
+      if (!description) {
+        document.querySelector(' #opportunity-description').className =
+          'input-error form-control';
+      }
+      if (!items) {
+        document.querySelector(' #items-to-bring').className =
+          'input-error form-control';
+      }
+      if (!volunteers) {
+        document.querySelector(' #volunteers-needed').className =
+          'input-error form-control';
+      }
+
+      document.querySelector('.error-text').textContent =
+        'You need to complete all fields & add an image to create an opportunity';
     }
-  }
-};
 
-const editButtonHandler = async (event) => {
-  event.preventDefault();
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+    const delButtonHandler = async (event) => {
+      if (event.target.hasAttribute('data-id')) {
+        const id = event.target.getAttribute('data-id');
 
-        const response = await fetch(`/api/opportunities/${id}`);
-        const data = await response.json();
-        console.log(data);
+        const response = await fetch(`/api/opportunities/${id}`, {
+          method: 'DELETE',
+        });
 
-        name.value = data.name;
-        sponsor.value = data.sponsor;
-        description.value = data.description;
-        date.value = data.date;
-        location.value = data.location;
-        items.value = data.items;
-        volunteers.value = data.volunteers;
-        post_id = data.id;
+        if (response.ok) {
+          document.location.replace('/profile');
+        }
       }
     };
+  }
+
+  const editButtonHandler = async (event) => {
+    event.preventDefault();
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+
+      const response = await fetch(`/api/opportunities/${id}`);
+      const data = await response.json();
+      console.log(data);
+
+      name.value = data.name;
+      sponsor.value = data.sponsor;
+      description.value = data.description;
+      date.value = data.date;
+      location.value = data.location;
+      items.value = data.items;
+      volunteers.value = data.volunteers;
+      post_id = data.id;
+    }
   };
 };
 
