@@ -22,7 +22,7 @@ Whether you're looking to give back to your community, gain new skills, or meet 
 
 ## Installation
 
-Go to [app page](https:) and follow the prompts.
+Go to [app page](https://immense-ridge-33507.herokuapp.com/) and follow the prompts.
 
 ## Usage
 
