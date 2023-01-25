@@ -102,16 +102,20 @@ hr {
 }
 
 /* Class Selectors */
-.btn.btn-primary {
-  color: var(--light);
-  background-color: black;
-  margin: 20px;
+.btn {
+  margin: 5px;
 }
 
-.btn.btn-primary:hover {
+.btn:hover {
   background-color: var(--light);
   color: black;
 }
+
+.btn-light:hover {
+  background-color: black;
+  color: var(--light);
+}
+
 .center {
   display: block;
   margin-left: auto;
@@ -145,6 +149,19 @@ hr {
 }
 .seperator {
   padding: 20px;
+}
+
+.input-error {
+  border: 4px red solid;
+}
+.error-text {
+  color: red;
+  font-size: bold;
+  text-shadow: 1px 2px 2px black;
+  margin: 20px;
+}
+.image-height {
+  max-height: 500px;
 }
 
 /* .dollar-amount {

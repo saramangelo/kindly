@@ -16,8 +16,19 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
-    } else {
+
     }
+  } else {
+    if (!email) {
+      document.querySelector('#email-login').className =
+        'input-error form-control';
+    }
+    if (!password) {
+      document.querySelector('#password-login').className =
+        'input-error form-control';
+    }
+    document.querySelector('.error-text').textContent =
+      'You need to complete all fields to login';
   }
 };
 
@@ -37,9 +48,22 @@ const signupFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace('/profile');
-    } else {
-
     }
+  } else {
+    if (!name) {
+      document.querySelector('#name-signup').className =
+        'input-error form-control';
+    }
+    if (!email) {
+      document.querySelector('#email-signup').className =
+        'input-error form-control';
+    }
+    if (!password) {
+      document.querySelector('#password-signup').className =
+        'input-error form-control';
+    }
+    document.querySelector('.error-text').textContent =
+      'You need to complete all fields to create a profile';
   }
 };
 
