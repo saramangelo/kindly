@@ -1,5 +1,5 @@
 const submitComment = async () => {
-  const comment = document.querySelector('#comment').value.trim();
+  const comments = document.querySelector('#comment').value.trim();
   const opportunity_id = document.querySelector('#opportunity');
   let oppId = opportunity_id.getAttribute('data-id');
   console.log(oppId);
@@ -7,11 +7,10 @@ const submitComment = async () => {
     console.log(comment);
 
     let input = JSON.stringify({
-      comment,
+      comments,
       opportunity_id: oppId,
     });
 
-    // console.log(input)
     const response = await fetch(`/api/comments/`, {
       method: 'POST',
       body: input,
@@ -22,7 +21,7 @@ const submitComment = async () => {
 
     if (response.ok) {
 
-      document.location.replace('/opportunities');
+      document.location.replace(`/opportunity/${oppId}`);
     } else {
     }
   }

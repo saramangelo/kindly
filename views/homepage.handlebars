@@ -5,7 +5,7 @@
     <div class='col-md-6 opportunity'>
       <div class='center-text'>
         <h2>
-          <a href="/opportunity/{{opportunity.id}}">
+          <a href='/opportunity/{{opportunity.id}}'>
             {{opportunity.name}}
           </a>
         </h2>
@@ -22,7 +22,8 @@
         </h5>
 
         <p>
-          Created by {{opportunity.user.name}}
+          Created by
+          {{opportunity.user.name}}
         </p>
       </div>
     </div>
@@ -31,8 +32,8 @@
       <figure class='figure'>
         <img
           class='figure-img img-fluid rounded center'
-          src="{{opportunity.photo}}"
-          alt="{{opportunity.photo.alt}}"
+          src='{{opportunity.photo}}'
+          alt='{{opportunity.photo.alt}}'
           width='200px'
         />
       </figure>
