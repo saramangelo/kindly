@@ -2,12 +2,11 @@
   <div class='col-md-6'>
     <h2>Welcome, {{name}}!</h2>
   </div>
-</div>
-    <br />
+
+    
 {{#if edit}}
 {{/if}}
 {{>opportunity-form}}
-
 
     {{#if opportunities.length}}
   <div class='col-md-6 opportunity-list'>
@@ -23,11 +22,11 @@
               {{opportunity.name}}
             </a>
           </h2>
-        </div>
+        
 
         <div class='col-md-4'>
           <button
-            class='btn btn-sm btn-warning edit-btn'
+            class='btn btn-sm btn-dark edit-btn'
             data-id='{{opportunity.id}}'
           >EDIT</button>
 
@@ -39,6 +38,7 @@
     {{/each}}
   </div>
 {{/if}}
+  </div>
   </div>
 
 
