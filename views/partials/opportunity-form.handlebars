@@ -1,0 +1,120 @@
+<div class='row mt-4'>
+  <div class='col-md-6'>
+    <h4>
+      Create A New Volunteer Opportunity!
+    </h4>
+    <br />
+
+    {{! cloudinary widget }}
+
+    <form class='form new-opportunity-form'>
+      <div class='mb-3'>
+        <label for='upload_widget' class='form-label'>
+          Upload Event Images below:
+        </label>
+        <br />
+        <br />
+        <button id='upload_widget' class='cloudinary-button'>
+          Upload Files
+        </button>
+      </div>
+
+      <div class='form-group'>
+        <label for='opportunity-name'>
+          Event Name:
+        </label>
+
+        <input
+          class='form-control'
+          type='text'
+          id='opportunity-name'
+          name='opportunity-name'
+        />
+      </div>
+
+      <div class='mb-3'>
+        <label for='organization-name'>
+          Who is sponsoring this opportunity?
+        </label>
+        <input
+          class='form-control'
+          type='text'
+          id='organization-name'
+          name='organization-name'
+        />
+      </div>
+
+      <div class='mb-3'>
+        <label for='opportunity-description'>
+          Please provide details about this opportunity:
+        </label>
+        <textarea
+          class='form-control'
+          type='text'
+          id='opportunity-description'
+          name='opportunity-description'
+        ></textarea>
+      </div>
+
+      <div class='mb-3'>
+        <label for='date-of-opp'>
+          When is it happening? MM/DD/YYYY
+        </label>
+        <input
+          class='form-control'
+          type='text'
+          id='date-of-opp'
+          name='date-of-opp'
+        />
+      </div>
+
+      <div class='mb-3'>
+        <label for='opportunity-location'>
+          Where is it happening?
+        </label>
+        <input
+          class='form-control'
+          type='text'
+          id='opportunity-location'
+          name='opportunity-location'
+        />
+      </div>
+
+      <div class='mb-3'>
+        <label for='items-to-bring'>
+          Please list the items for volunteers to bring to this event:
+        </label>
+        <input
+          class='form-control'
+          type='text'
+          id='items-to-bring'
+          name='items-to-bring'
+        />
+      </div>
+
+      <div class='mb-3'>
+        <label for='volunteers-needed'>
+          Number of volunteers needed:
+        </label>
+        <input
+          class='form-control'
+          type='number'
+          id='volunteers-needed'
+          name='volunteers-needed'
+        />
+      </div>
+
+      <div class='form-group'>
+        <button
+          type='submit'
+          type='button'
+          class='btn btn-dark btn-lg'
+          id='myBtn'
+          class='btn btn-dark'
+        >
+          Create
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
