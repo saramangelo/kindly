@@ -8,7 +8,7 @@ Kindly is a full-stack application where volunteer users can create an account, 
 
 ![Kindly](./assets/images/gif-kindly.gif)
 
-## Table of Contents (Optional)
+## Table of Contents 
 
 - [Installation](#installation)
 - [Usage](#usage)

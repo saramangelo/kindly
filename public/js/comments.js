@@ -27,4 +27,5 @@ const submitComment = async () => {
   }
 };
 
+
 document.querySelector('.btn').addEventListener('click', submitComment);
