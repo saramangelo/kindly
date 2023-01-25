@@ -1,45 +1,53 @@
 <div class='d-flex row'>
   <div class='col-md-4'>
-    <h2>Welcome, {{name}}!</h2>
+    <h2>
+      Welcome,
+      {{name}}!
+    </h2>
   </div>
+</div>
 
-  
-{{#if edit}}
-{{/if}}
-{{>opportunity-form}}
+<div class='d-flex row mt-4'>
+  <div class='d-flex row mt-4'>
+    {{#if edit}}
+    {{/if}}
 
-    {{#if opportunities.length}}
-  <div class='col-md-6 opportunity-list'>
-    <h4>
-      Current Opportunities:
-    </h4>
+    {{>opportunity-form}}
+      {{#if opportunities.length}}
+        <div class='col-md-6 opportunity-list'>
+          <h4>
+            Current Opportunities:
+          </h4>
 
-    {{#each opportunities as |opportunity|}}
-      <div class='row mb-2'>
-        <div class='col-md-8'>
-          <h2>
-            <a href='/opportunity/{{opportunity.id}}'>
-              {{opportunity.name}}
-            </a>
-          </h2>
-        
+          {{#each opportunities as |opportunity|}}
+            <div class='row mb-2'>
+              <div class='col-md-8'>
+                <h2>
+                  <a href="/opportunity/{{opportunity.id}}">
+                    {{opportunity.name}}
+                  </a>
+                </h2>
+              </div>
 
-        <div class='col-md-4'>
-          <button
-            class='btn btn-sm btn-dark edit-btn'
-            data-id='{{opportunity.id}}'
-          >EDIT</button>
+              <div class='col-md-2'>
+                <button
+                  class='btn btn-dark btn-sm edit-btn'
+                  data-id="{{opportunity.id}}"
+                >
+                  EDIT
+                </button>
 
-          <button class='btn btn-sm btn-dark' data-id='{{opportunity.id}}'>
-            DELETE
-          </button>
+                <button class='btn btn-sm btn-dark' data-id="{{opportunity.id}}">
+                  DELETE
+                </button>
+              </div>
+            </div>
+          {{/each}}
+
         </div>
-      </div>
-    {{/each}}
+      {{/if}}
   </div>
-{{/if}}
-  </div>
-  </div>
+</div>
 
 
 <script

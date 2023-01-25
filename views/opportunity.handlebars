@@ -60,17 +60,17 @@
   </div>
   <br />
 
-  {{#each comments as |comment|}}
-    <p>
-      {{comment.comments}}
-    </p>
-  {{/each}}
-
   <p>
     <button class='btn btn-dark'>
       Comment
     </button>
   </p>
+
+  {{#each comments as |comment|}}
+    <p>
+      {{comment.comments}}
+    </p>
+  {{/each}}
 </div>
 
 <script src='./js/comments.js'></script>
