@@ -1,5 +1,3 @@
-//This code imports the Express.js router and the User model from the models directory. It creates a new Express Router and imports User model from models directory to use it in the routes.
-
 const router = require('express').Router();
 const { User } = require('../../models');
 
