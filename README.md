@@ -6,9 +6,13 @@
 
 Kindly is a full-stack application where volunteer users can create an account, log in, submit available volunteer opportunities, photos, which are then posted to the homepage. Users can also comment on these posts.
 
+This volunteer app allow users to post volunteer opportunities that align with their interests, schedule, and location.
+
+Whether you're looking to give back to your community, gain new skills, or meet new people, our app has something for everyone. With a user-friendly interface and a variety of volunteer opportunities to choose from, you'll be making a difference in no time.
+
 ![Kindly](./assets/images/gif-kindly.gif)
 
-## Table of Contents 
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
