@@ -32,9 +32,9 @@ const newFormHandler = async (event) => {
     let response;
     let input = {
       name,
-      organization_name,
+      sponsor: organization_name,
       description,
-      date_of_opp,
+      date: date_of_opp,
       location,
       items,
     };
@@ -61,54 +61,54 @@ const newFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace('/profile');
-    }
-  } else {
-    if (!name) {
-      document.querySelector('#opportunity-name').className =
-        'input-error form-control';
-    }
-    if (!sponsor) {
-      document.querySelector('#organization-name').className =
-        'input-error form-control';
-    }
-    if (!date) {
-      document.querySelector('#date-of-opp').className =
-        'input-error form-control';
-    }
-    if (!location) {
-      document.querySelector('#opportunity-location').className =
-        'input-error form-control';
-    }
-    if (!description) {
-      document.querySelector(' #opportunity-description').className =
-        'input-error form-control';
-    }
-    if (!items) {
-      document.querySelector(' #items-to-bring').className =
-        'input-error form-control';
-    }
-    if (!volunteers) {
-      document.querySelector(' #volunteers-needed').className =
-        'input-error form-control';
-    }
+    } else {
+      if (!name) {
+        document.querySelector('#opportunity-name').className =
+          'input-error form-control';
+      }
+      if (!sponsor) {
+        document.querySelector('#organization-name').className =
+          'input-error form-control';
+      }
+      if (!date) {
+        document.querySelector('#date-of-opp').className =
+          'input-error form-control';
+      }
+      if (!location) {
+        document.querySelector('#opportunity-location').className =
+          'input-error form-control';
+      }
+      if (!description) {
+        document.querySelector(' #opportunity-description').className =
+          'input-error form-control';
+      }
+      if (!items) {
+        document.querySelector(' #items-to-bring').className =
+          'input-error form-control';
+      }
+      if (!volunteers) {
+        document.querySelector(' #volunteers-needed').className =
+          'input-error form-control';
+      }
 
-    document.querySelector('.error-text').textContent =
-      'You need to complete all fields & add an image to create an opportunity';
-  }
-};
-
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/opportunities/${id}`, {
-      method: 'DELETE',
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
+      document.querySelector('.error-text').textContent =
+        'You need to complete all fields & add an image to create an opportunity';
     }
   }
+
+  const delButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+
+      const response = await fetch(`/api/opportunities/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        document.location.replace('/profile');
+      }
+    }
+  };
 };
 
 const editButtonHandler = async (event) => {
