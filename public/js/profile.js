@@ -1,60 +1,49 @@
-const name = document.querySelector('#opportunity-name').value.trim();
-const sponsor = document.querySelector('#organization-name').value.trim();
-const description = document
-  .querySelector('#opportunity-description')
-  .value.trim();
-const date = document.querySelector('#date-of-opp').value.trim();
-let location = document.querySelector('#opportunity-location').value.trim();
-const items = document.querySelector('#items-to-bring').value.trim();
-const volunteers = document.querySelector('#volunteers-needed').value.trim();
-
-let post_id = 0;
-
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  let name = name.value.trim();
-  let organization_name = sponsor.value.trim();
-  let description = description.value.trim();
-  let date_of_opp = date.value.trim();
-  let location = location.value.trim();
-  let items = volunteers.value.trim();
+  const name = document.querySelector('#opportunity-name').value.trim();
+  const sponsor = document.querySelector('#organization-name').value.trim();
+  const description = document
+    .querySelector('#opportunity-description')
+    .value.trim();
+  const date = document.querySelector('#date-of-opp').value.trim();
+  const location = document.querySelector('#opportunity-location').value.trim();
+  const items = document.querySelector('#items-to-bring').value.trim();
+  const volunteers = document.querySelector('#volunteers-needed').value.trim();
 
-  if (name && sponsor && description && date && location && volunteers) {
-    let response;
-    let input = {
+  if (
+    name &&
+    sponsor &&
+    description &&
+    date &&
+    location &&
+    items &&
+    volunteers
+  ) {
+    console.log(photo);
+    let input = JSON.stringify({
       name,
-      sponsor: organization_name,
+      organization_name: sponsor,
       description,
-      date: date_of_opp,
+      date_of_opp: date,
       location,
       items,
-    };
+      volunteers_needed: volunteers,
+      photo: photo.url,
+    });
 
-    if (post_id === 0) {
-      response = await fetch(`/api/opportunities`, {
-        method: 'POST',
-        body: JSON.stringify(input),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-    } else {
-      let updated_post = { ...input, id: post_id };
-
-      response = await fetch(`/api/opportunities`, {
-        method: 'PUT',
-        body: JSON.stringify(updated_post),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-    }
+    // console.log(input)
+    const response = await fetch(`/api/opportunities/`, {
+      method: 'POST',
+      body: input,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
     if (response.ok) {
       // /profile corresponds to homeRoutes.js on BE
       document.location.replace('/profile');
-
     }
 
     //Error bars when no entry is provided by users.
@@ -88,43 +77,21 @@ const newFormHandler = async (event) => {
         'input-error form-control';
     }
 
-
-      document.querySelector('.error-text').textContent =
-        'You need to complete all fields & add an image to create an opportunity';
-    }
+    document.querySelector('.error-text').textContent =
+      'You need to complete all fields & add an image to create an opportunity';
   }
-  const delButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-
-      const response = await fetch(`/api/opportunities/${id}`, {
-        method: 'DELETE',
-      });
-
-      if (response.ok) {
-        document.location.replace('/profile');
-      }
-    }
-  };
 };
-
-const editButtonHandler = async (event) => {
-  event.preventDefault();
+const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/opportunities/${id}`);
-    const data = await response.json();
-    console.log(data);
+    const response = await fetch(`/api/opportunities/${id}`, {
+      method: 'DELETE',
+    });
 
-    name.value = data.name;
-    sponsor.value = data.sponsor;
-    description.value = data.description;
-    date.value = data.date;
-    location.value = data.location;
-    items.value = data.items;
-    volunteers.value = data.volunteers;
-    post_id = data.id;
+    if (response.ok) {
+      document.location.replace('/profile');
+    }
   }
 };
 
@@ -135,7 +102,3 @@ document
 document
   .querySelector('.opportunity-list')
   .addEventListener('click', delButtonHandler);
-
-document
-  .querySelector('.edit-btn')
-  .addEventListener('click', editButtonHandler);
