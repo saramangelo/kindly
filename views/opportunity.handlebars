@@ -3,8 +3,8 @@
     {{name}}
   </h1>
 
-  <div id='opportunity' data-id="{{opportunity.id}}"></div>
-  <img src="{{photo}}" alt='sponsor image' class='image-height' />
+  <div id='opportunity' data-id='{{id}}'></div>
+  <img src='{{photo}}' alt='sponsor image' class='image-height' />
 
   <h3>
     Hosted by
@@ -30,47 +30,44 @@
     volunteers needed
   </p>
   <div>
-    <br />
+    {{!-- <br />
     <p>
       Click the button below to add your name to the list!
     </p>
     <button type='button' class='btn btn-dark sign-up' id='sign-up'>
       Sign me up!
     </button>
-    <br />
-    <br />
     <script>
-      function changeText(){
-      document.querySelector('#sign-up').textContent = "You are signed up!" }
+      function changeText(){ document.querySelector('#sign-up').textContent =
+      "You are signed up!" }
       document.querySelector('#sign-up').addEventListener('click', changeText);
-    </script>
+    </script> --}}
     <br />
-    <h3>
-      Leave a comment below!
-    </h3>
-    <div class='form-group'>
-      <label for='exampleFormControlTextarea1'></label>
-      <textarea
-        placeholder='Type your comment here...'
-        class='form-control comment'
-        id='comment'
-        rows='3'
-      ></textarea>
+    <div>
+      <h3>Leave a comment below!</h3>
+
+      <br />
+
+      <div class='form-group'>
+        <label for='exampleFormControlTextarea1'></label>
+        <textarea
+          placeholder='Type your comment here...'
+          class='form-control comment'
+          id='comment'
+          rows='3'
+        ></textarea>
+      </div>
     </div>
   </div>
   <br />
 
+  {{#each comments as |comment|}}
+    <p>{{comment.comments}}</p>
+  {{/each}}
   <p>
     <button class='btn btn-dark'>
       Comment
     </button>
   </p>
 
-  {{#each comments as |comment|}}
-    <p>
-      {{comment.comments}}
-    </p>
-  {{/each}}
 </div>
-
-<script src='./js/comments.js'></script>

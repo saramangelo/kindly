@@ -32,12 +32,11 @@ router.get('/', async (req, res) => {
 
 router.get('/opportunity/:id', async (req, res) => {
   try {
-    console.log(req.params.id);
     const opportunityData = await Opportunity.findByPk(req.params.id, {
       include: [
         { 
           model: User,
-        attributes: ['name']
+        attributes: ['name'],
       },
 
         {
