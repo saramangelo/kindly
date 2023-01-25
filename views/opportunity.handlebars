@@ -30,18 +30,6 @@
     volunteers needed
   </p>
   <div>
-    {{! <br />
-    <p>
-      Click the button below to add your name to the list!
-    </p>
-    <button type='button' class='btn btn-dark sign-up' id='sign-up'>
-      Sign me up!
-    </button>
-    <script>
-      function changeText(){ document.querySelector('#sign-up').textContent =
-      "You are signed up!" }
-      document.querySelector('#sign-up').addEventListener('click', changeText);
-    </script> }}
     <br />
     <div>
       <h3>
@@ -72,8 +60,8 @@
   {{#each comments as |comment|}}
     <ul class='list-group list-group-flush'>
       <li class='list-group-item list-group-item-info'>
-        {{comment.comments}}
+        | {{comment.comments}}
       </li>
     </ul>
   {{/each}}
-</div> 
+</div>

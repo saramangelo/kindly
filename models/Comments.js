@@ -16,6 +16,7 @@ Comments.init(
         key: 'id',
       },
     },
+
     opportunity_id: {
       type: DataTypes.INTEGER,
       references: {
