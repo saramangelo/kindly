@@ -62,11 +62,38 @@ console.log(input);
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      //TODO: target the modal
-      //TODO: change it to display block
+     if (!name) {
+      document.querySelector('#opportunity-name').className =
+        'input-error form-control';
     }
+    if (!sponsor) {
+      document.querySelector('#organization-name').className =
+        'input-error form-control';
+    }
+    if (!date) {
+      document.querySelector('#date-of-opp').className =
+        'input-error form-control';
+    }
+    if (!location) {
+      document.querySelector('#opportunity-location').className =
+        'input-error form-control';
+    }
+    if (!description) {
+      document.querySelector(' #opportunity-description').className =
+        'input-error form-control';
+    }
+    if (!items) {
+      document.querySelector(' #items-to-bring').className =
+        'input-error form-control';
+    }
+    if (!volunteers) {
+      document.querySelector(' #volunteers-needed').className =
+        'input-error form-control';
+    }
+
+    document.querySelector('.error-text').textContent =
+      'You need to complete all fields & add an image to create an opportunity';
   }
-};
 
 
 const delButtonHandler = async (event) => {
@@ -76,10 +103,6 @@ const delButtonHandler = async (event) => {
     const response = await fetch(`/api/opportunities/${id}`, {
       method: 'DELETE',
     });
-
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
 
       if (response.ok) {
         document.location.replace('/profile');
